@@ -1,5 +1,6 @@
 
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,7 +32,7 @@
             padding: 10px;
         }
         nav a {
-            color: Pink;
+            color: pink;
             text-decoration: none;
             margin: 15px;
             font-size: 18px;
@@ -40,7 +41,7 @@
         }
         section {
             padding: 50px;
-            background: Orange;
+            background: orange;
             margin: 10px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -66,18 +67,6 @@
         .btn:hover {
             background: #cc5200;
         }
-        .team-members li {
-            list-style: none;
-            font-size: 18px;
-            margin: 10px 0;
-            font-weight: bold;
-        }
-        .team-members span {
-            display: block;
-            font-size: 16px;
-            font-weight: normal;
-            color: #666;
-        }
     </style>
     <script>
         function showSection(sectionId) {
@@ -86,12 +75,25 @@
             });
             document.getElementById(sectionId).style.display = 'block';
         }
+
+        function employeeLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Replace with actual login validation
+            if (username === "admin" && password === "password") {
+                alert("Login Successful!");
+                window.location.href = "student-data.html"; // Redirect after login
+            } else {
+                alert("Invalid credentials. Please try again.");
+            }
+        }
     </script>
 </head>
 <body>
 
     <header>
-        <img src="FINAL LOGO PNG.png" alt="TrackMyGrowth Logo">
+        <img src="images/FINAL_LOGO_PNG.png" alt="TrackMyGrowth Logo">
         TrackMyGrowth – Empowering Schools & Students
     </header>
 
@@ -103,6 +105,7 @@
         <a onclick="showSection('contact')">Contact Us</a>
         <a onclick="showSection('employee')">Employee Corner</a>
     </nav>
+
 
    <section id="about">
         <h2>About Us</h2>
@@ -232,13 +235,13 @@ Join us on this journey of growth and excellence. With TrackMyGrowth, the future
         <p>Phone: +91 9795776786</p>
     </section>
 
-    <section id="employee">
+   <section id="employee">
         <h2>Employee Corner</h2>
-        <a href="login.html">Employee Login</a>
         <input type="text" id="username" placeholder="Username"><br><br>
         <input type="password" id="password" placeholder="Password"><br><br>
-  
+        <button onclick="employeeLogin()">Login</button>
     </section>
+
     <footer>
         &copy; 2025 TrackMyGrowth. All rights reserved.
     </footer>
