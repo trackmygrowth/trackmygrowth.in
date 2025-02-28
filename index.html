@@ -5,16 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrackMyGrowth</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; }
-        header { background: #0073e6; color: white; padding: 20px; font-size: 24px; }
-        nav { background: #005bb5; padding: 10px; }
-        nav a { color: white; text-decoration: none; margin: 15px; font-size: 18px; }
-        section { padding: 50px; }
-        footer { background: #0073e6; color: white; padding: 10px; width: 100%; }
-        .btn { background: #005bb5; color: white; padding: 10px 20px; text-decoration: none; display: inline-block; margin-top: 20px; border-radius: 5px; }
-        .btn:hover { background: #003f80; }
-        .hidden { display: none; }
-        .login-box, .report-box { background: #f0f0f0; padding: 20px; border-radius: 5px; width: 50%; margin: auto; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #0073e6;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav {
+            background: #005bb5;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        section {
+            padding: 50px;
+            background: white;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background: #0073e6;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            position: relative;
+        }
+        .btn {
+            background: #ff6600;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #cc5200;
+        }
+        .hidden {
+            display: none;
+        }
+        .login-box, .report-box {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            width: 50%;
+            margin: auto;
+        }
+        .team-members li {
+            list-style: none;
+            font-size: 18px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .team-members span {
+            display: block;
+            font-size: 16px;
+            font-weight: normal;
+            color: #666;
+        }
     </style>
     <script>
         function showLogin() {
@@ -23,8 +88,6 @@
         function validateLogin() {
             var user = document.getElementById('username').value;
             var pass = document.getElementById('password').value;
-
-            // Simulated authentication (should be replaced with backend validation)
             if (user === 'employee' && pass === 'password123') {
                 document.getElementById('loginForm').classList.add('hidden');
                 document.getElementById('reportForm').classList.remove('hidden');
@@ -71,13 +134,13 @@ To provide data-driven insights, expert guidance, and innovative tools that empo
 ________________________________________
 Join us on this journey of growth and excellence. With TrackMyGrowth, the future isn’t just bright—it’s extraordinary.
 
-.</p>
+
+</p>
     </section>
     
     <section id="services">
         <h2>Our Services</h2>
-
-        <h3>For Schools</h3>
+         <h3>For Schools</h3>
         <h4>✅ Monthly School Performance Monitoring</h4>
         <ul>
             <li>Water Quality Testing: Ensuring safe drinking water through regular pH level checks.</li>
@@ -102,7 +165,8 @@ Join us on this journey of growth and excellence. With TrackMyGrowth, the future
             <li>Assistance in recruiting highly qualified teachers for a stronger educational foundation.</li>
         </ul>
 
-        <h3>For Students</h3>
+        </ul>
+          <h3>For Students</h3>
         <h4>✅ Academic Performance Tracking & Subject Improvement</h4>
         <ul>
             <li>Weekly learning reviews and knowledge tests.</li>
@@ -143,11 +207,25 @@ Join us on this journey of growth and excellence. With TrackMyGrowth, the future
 
         <h4>📩 Get Started Today! Let us help your child reach their full potential.</h4>
     </section>
+
+        </ul>
+    </section>
     
     <section id="join">
         <h2>Join Us</h2>
         <p>Become a part of TrackMyGrowth and help shape the future of education.</p>
         <a href="#" class="btn">Sign Up Now</a>
+    </section>
+    
+    <section id="team">
+        <h2>Our Team</h2>
+        <ul class="team-members">
+            <li><strong>S.M. Daood</strong> <span>Founder & CEO</span></li>
+            <li><strong>Umra Hameed</strong> <span>Functionality Head</span></li>
+            <li><strong>Khushnuma Parveen</strong> <span>Analytics Head</span></li>
+            <li><strong>Uzma Parveen</strong> <span>Quality Head (Academic)</span></li>
+            <li><strong>Neha Parveen</strong> <span>Quality Head (Medical)</span></li>
+        </ul>
     </section>
     
     <section id="contact">
@@ -169,32 +247,8 @@ Join us on this journey of growth and excellence. With TrackMyGrowth, the future
         <p>Contact No: +91 9795776786, 8929150711</p>
         <p>Email ID: info.trackmygrowth@gmail.com</p>
         <p>Date: 25th March 2025</p>
-        <h3>Student Information</h3>
-        <p>St. Name: ############### | Age: ###### | Parent Name: ################## | Class: ### | School: ##################</p>
-        <h3>School & Syllabus Analysis</h3>
-        <p>Syllabus Knowledge: ###/100 - ###############</p>
-        <p>Main Subjects: ###/100 - ##################</p>
-        <p>Weak Points: ###/100 - Needs focus</p>
-        <h3>Hygiene Analysis</h3>
-        <p>Physical Activity: ###/10 - ###############</p>
-        <h3>Ranking</h3>
-        <p>City Rank: 27 | All India Rank: 187</p>
-        <p>End of Report</p>
     </section>
-     <section id="team">
-        <h2>Our Team</h2>
-        <div class="team-container" onclick="toggleTeam()">
-            <strong>Click to View Our Team</strong>
-        </div>
-        <ul id="teamList" class="team-members">
-            <li><strong>S.M. Daood</strong> – <span>Founder & CEO</span></li>
-            <li><strong>Umra Hameed</strong> – <span>Functionality Head</span></li>
-            <li><strong>Khushnuma Parveen</strong> – <span>Analytics Head</span></li>
-            <li><strong>Uzma Parveen</strong> – <span>Quality Head (Academic)</span></li>
-            <li><strong>Neha Parveen</strong> – <span>Quality Head (Medical)</span></li>
-        </ul>
-    </section>
-
+    
     <footer>
         &copy; 2025 TrackMyGrowth. All rights reserved.
     </footer>
