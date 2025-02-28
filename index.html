@@ -14,6 +14,8 @@
         .btn { background: #005bb5; color: white; padding: 10px 20px; text-decoration: none; display: inline-block; margin-top: 20px; border-radius: 5px; }
         .btn:hover { background: #003f80; }
         .login-box, .report-box { background: #f0f0f0; padding: 20px; border-radius: 5px; width: 50%; margin: auto; }
+        .team-members { display: none; list-style-type: none; padding: 0; }
+        .team-container { cursor: pointer; font-weight: bold; margin-top: 20px; color: #005bb5; }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -55,6 +57,11 @@
                 alert('Invalid Credentials');
             }
         }
+
+        function toggleTeam() {
+            var teamList = document.getElementById("teamList");
+            teamList.style.display = (teamList.style.display === "none" || teamList.style.display === "") ? "block" : "none";
+        }
     </script>
 </head>
 <body>
@@ -86,7 +93,10 @@
 
     <section id="team">
         <h2>Our Team</h2>
-        <ul>
+        <div class="team-container" onclick="toggleTeam()">
+            <strong>Click to View Our Team</strong>
+        </div>
+        <ul id="teamList" class="team-members">
             <li><strong>S.M. Daood</strong> – Founder & CEO</li>
             <li><strong>Alisha Hameed</strong> – Functionality Head</li>
             <li><strong>Khushnuma Parveen</strong> – Analytics Head</li>
