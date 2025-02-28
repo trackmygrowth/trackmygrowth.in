@@ -6,73 +6,56 @@
     <title>TrackMyGrowth</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; }
-        header { background: #0073e6; color: white; padding: 20px; font-size: 24px; }
+        header, footer { background: #0073e6; color: white; padding: 20px; }
         nav { background: #005bb5; padding: 10px; }
         nav a { color: white; text-decoration: none; margin: 15px; font-size: 18px; }
-        section { padding: 50px; }
-        footer { background: #0073e6; color: white; padding: 10px; position: relative; bottom: 0; width: 100%; }
-        .btn { background: #005bb5; color: white; padding: 10px 20px; text-decoration: none; display: inline-block; margin-top: 20px; border-radius: 5px; }
+        section { padding: 50px; display: none; }
+        .btn { background: #005bb5; color: white; padding: 10px 20px; text-decoration: none; display: inline-block; margin-top: 20px; border-radius: 5px; cursor: pointer; }
         .btn:hover { background: #003f80; }
+        .login-container { display: none; padding: 20px; background: #f4f4f4; width: 300px; margin: auto; }
+        input { width: 100%; padding: 10px; margin: 5px 0; }
+        .report-form { display: none; padding: 20px; text-align: left; background: #f9f9f9; width: 80%; margin: auto; }
     </style>
 </head>
 <body>
     <header>TrackMyGrowth – Empowering Schools & Students</header>
     <nav>
-        <a href="#about">About Us</a>
-        <a href="#services">Our Services</a>
-        <a href="#join">Join Us</a>
+        <a href="#" onclick="showSection('features')">Our Features</a>
+        <a href="#" onclick="showSection('employee')">Employee Corner</a>
         <a href="#contact">Contact Us</a>
     </nav>
     
-    <section id="about">
-        <h2>About Us</h2>
-        <p>TrackMyGrowth is dedicated to supporting both schools and parents by providing real-time insights into academic performance, social behavior, and infrastructure quality.</p>
+    <section id="features">
+        <h2>Our Features</h2>
+        <button class="btn" onclick="showSection('schools')">For Schools</button>
+        <button class="btn" onclick="showSection('students')">For Students</button>
     </section>
     
-    <section id="services">
-        <h2>Our Services</h2>
-
-        <h3>For Schools</h3>
-        <h4>Monthly School Performance Monitoring</h4>
-        <ul>
-            <li>Water Quality Testing: Ensuring safe drinking water through regular pH level checks.</li>
-            <li>Air Quality Index Monitoring: Maintaining a healthy learning environment.</li>
-            <li>Classroom Ventilation & Condition Assessment: Optimizing classroom environments for better learning.</li>
-            <li>Cleanliness & Hygiene Audits: Regular inspections to maintain high sanitation standards.</li>
-            <li>Playground & Sports Facilities Testing: Ensuring safety and functionality.</li>
-            <li>Transport Condition Checks: Monitoring school transportation for safety and reliability.</li>
-        </ul>
-
-        <h4>School Growth & Ranking System</h4>
-        <ul>
-            <li>City-wise confidential reports comparing your school’s performance with others.</li>
-            <li>Monthly evaluations to identify improvement opportunities.</li>
-            <li>A dedicated ranking system to enhance your school’s reputation and attract more students.</li>
-        </ul>
-
-        <h4>Faculty Development & Teacher Support</h4>
-        <ul>
-            <li>Professional development workshops on modern teaching methods and classroom management.</li>
-            <li>Expert teachers provided for special subjects to enrich the learning experience.</li>
-            <li>Assistance in recruiting highly qualified teachers for a stronger educational foundation.</li>
-        </ul>
-
-        <h4>Why Choose TrackMyGrowth?</h4>
-        <p>TrackMyGrowth is a rapidly growing platform that helps modernize your school from every angle. By joining our panel, you’ll unlock data-driven insights, expert guidance, and valuable resources designed to help your school grow and excel.</p>
-        <p>Don’t wait! Partner with TrackMyGrowth today and witness the difference in your school’s growth and success!</p>
-
-        <h3>For Students</h3>
-        <ul>
-            <li>Academic tracking and subject improvement plans.</li>
-            <li>Personalized counseling and behavior analysis.</li>
-            <li>Health monitoring and cognitive skill development.</li>
-        </ul>
+    <section id="schools">
+        <h2>Features for Schools</h2>
+        <p>Monthly school performance monitoring, faculty development, school ranking system, etc.</p>
     </section>
     
-    <section id="join">
-        <h2>Join Us</h2>
-        <p>Become a part of TrackMyGrowth and help shape the future of education.</p>
-        <a href="#" class="btn">Sign Up Now</a>
+    <section id="students">
+        <h2>Features for Students</h2>
+        <p>Academic tracking, cognitive skills assessment, behavioral analysis, etc.</p>
+    </section>
+    
+    <section id="employee">
+        <h2>Employee Corner</h2>
+        <div class="login-container" id="login">
+            <h3>Login</h3>
+            <input type="text" id="userId" placeholder="User ID">
+            <input type="password" id="password" placeholder="Password">
+            <button class="btn" onclick="validateLogin()">Login</button>
+        </div>
+        <div class="report-form" id="report">
+            <h3>Weekly Report</h3>
+            <p>Contact: +91 9795776786, 8929150711</p>
+            <p>Email: info.trackmygrowth@gmail.com</p>
+            <p>Date: 25th March 2025</p>
+            <textarea rows="10" cols="80" placeholder="Enter details..."></textarea>
+        </div>
     </section>
     
     <section id="contact">
@@ -84,5 +67,23 @@
     <footer>
         &copy; 2025 TrackMyGrowth. All rights reserved.
     </footer>
+    
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => section.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+        }
+        
+        function validateLogin() {
+            var userId = document.getElementById('userId').value;
+            var password = document.getElementById('password').value;
+            if (userId === 'TMG001' && password === 'Alisha@123') {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('report').style.display = 'block';
+            } else {
+                alert('Invalid credentials!');
+            }
+        }
+    </script>
 </body>
 </html>
