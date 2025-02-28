@@ -8,26 +8,49 @@
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; }
         header { background: #0073e6; color: white; padding: 20px; font-size: 24px; }
         nav { background: #005bb5; padding: 10px; }
-        nav a { color: white; text-decoration: none; margin: 15px; font-size: 18px; }
-        section { padding: 50px; }
+        nav a { color: white; text-decoration: none; margin: 15px; font-size: 18px; cursor: pointer; }
+        section { padding: 50px; display: none; } /* Hide all sections initially */
         footer { background: #0073e6; color: white; padding: 10px; width: 100%; }
         .btn { background: #005bb5; color: white; padding: 10px 20px; text-decoration: none; display: inline-block; margin-top: 20px; border-radius: 5px; }
         .btn:hover { background: #003f80; }
-        .hidden { display: none; }
         .login-box, .report-box { background: #f0f0f0; padding: 20px; border-radius: 5px; width: 50%; margin: auto; }
     </style>
     <script>
-        function showLogin() {
-            document.getElementById('loginForm').classList.remove('hidden');
-        }
+        document.addEventListener("DOMContentLoaded", function() {
+            // Show only "About Us" section by default
+            document.getElementById("about").style.display = "block";
+
+            function showSection(sectionId) {
+                let sections = document.querySelectorAll("section");
+                sections.forEach(section => {
+                    section.style.display = "none"; // Hide all sections
+                });
+                document.getElementById(sectionId).style.display = "block"; // Show selected section
+            }
+
+            // Add click event listeners to navigation links
+            document.querySelectorAll("nav a").forEach(link => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    let sectionId = this.getAttribute("href").substring(1);
+                    showSection(sectionId);
+                });
+            });
+
+            // Show login form when "Employee Corner" is clicked
+            document.getElementById("employeeCorner").addEventListener("click", function() {
+                showSection("loginForm");
+            });
+        });
+
         function validateLogin() {
             var user = document.getElementById('username').value;
             var pass = document.getElementById('password').value;
 
-            // Simulated authentication (should be replaced with backend validation)
+            // Simulated authentication (replace with backend validation)
             if (user === 'employee' && pass === 'password123') {
-                document.getElementById('loginForm').classList.add('hidden');
-                document.getElementById('reportForm').classList.remove('hidden');
+                alert("Login Successful!");
+                showSection('reportForm'); // Show report section after successful login
             } else {
                 alert('Invalid Credentials');
             }
@@ -42,157 +65,54 @@
         <a href="#join">Join Us</a>
         <a href="#team">Our Team</a>
         <a href="#contact">Contact Us</a>
-        <a href="javascript:void(0);" onclick="showLogin()">Employee Corner</a>
+        <a href="javascript:void(0);" id="employeeCorner">Employee Corner</a>
     </nav>
     
     <section id="about">
         <h2>About Us</h2>
-        <p>About Us
-Empowering Growth, Inspiring Futures
-At TrackMyGrowth, we believe that every child holds limitless potential—and every school plays a pivotal role in unlocking that potential. Our mission is to support parents and schools in nurturing young minds, fostering academic excellence, personal growth, and emotional well-being.
-In today’s fast-paced world, keeping track of a child’s development can be overwhelming for both parents and educators. That’s where we come in. TrackMyGrowth is a revolutionary platform designed to simplify this journey by offering personalized insights, expert guidance, and real-time monitoring of a child’s academic progress, cognitive skills, social behavior, and overall well-being.
-But we don’t stop at supporting children alone. We partner with schools to help them grow, innovate, and set new benchmarks for educational excellence. Our platform offers comprehensive monitoring tools, expert faculty support, school facility inspections, and detailed performance reports—helping institutions create the best learning environment for every student.
-________________________________________
-🌟 What Sets Us Apart?
-✅ For Parents:
-•	Real-time updates on academic, social, and emotional development
-•	Personalized counseling, career guidance, and national-level rankings
-•	24/7 academic support and health monitoring
-✅ For Schools:
-•	City-wise confidential performance reports and monthly inspections
-•	Third-party education quality audits for unbiased evaluations
-•	Faculty development programs and expert-led extra classes
-•	Assistance with hiring expert teachers and enhancing infrastructure
-________________________________________
-🚀 Our Vision
-To create a world where every child has the opportunity to grow, learn, and succeed—supported by schools and parents working together in harmony.
-🎯 Our Mission
-To provide data-driven insights, expert guidance, and innovative tools that empower parents and schools to nurture every child’s unique potential.
-________________________________________
-Join us on this journey of growth and excellence. With TrackMyGrowth, the future isn’t just bright—it’s extraordinary.
-
-.</p>
+        <p>Empowering Growth, Inspiring Futures...</p>
     </section>
-    
+
     <section id="services">
         <h2>Our Services</h2>
-
-        <h3>For Schools</h3>
-        <h4>✅ Monthly School Performance Monitoring</h4>
-        <ul>
-            <li>Water Quality Testing: Ensuring safe drinking water through regular pH level checks.</li>
-            <li>Air Quality Index Monitoring: Maintaining a healthy learning environment.</li>
-            <li>Classroom Ventilation & Condition Assessment: Optimizing classroom environments for better learning.</li>
-            <li>Cleanliness & Hygiene Audits: Regular inspections to maintain high sanitation standards.</li>
-            <li>Playground & Sports Facilities Testing: Ensuring safety and functionality.</li>
-            <li>Transport Condition Checks: Monitoring school transportation for safety and reliability.</li>
-        </ul>
-
-        <h4>✅ School Growth & Ranking System</h4>
-        <ul>
-            <li>City-wise confidential reports comparing your school’s performance with others.</li>
-            <li>Monthly evaluations to identify improvement opportunities.</li>
-            <li>A dedicated ranking system to enhance your school’s reputation and attract more students.</li>
-        </ul>
-
-        <h4>✅ Faculty Development & Teacher Support</h4>
-        <ul>
-            <li>Professional development workshops on modern teaching methods and classroom management.</li>
-            <li>Expert teachers provided for special subjects to enrich the learning experience.</li>
-            <li>Assistance in recruiting highly qualified teachers for a stronger educational foundation.</li>
-        </ul>
-
-        <h3>For Students</h3>
-        <h4>✅ Academic Performance Tracking & Subject Improvement</h4>
-        <ul>
-            <li>Weekly learning reviews and knowledge tests.</li>
-            <li>Identifying weak subjects and creating focused improvement plans.</li>
-        </ul>
-
-        <h4>✅ Cognitive & Skill Development Analysis</h4>
-        <ul>
-            <li>Memory retention and learning ability assessment.</li>
-            <li>Communication skills evaluation and confidence-building activities.</li>
-            <li>Career guidance from subject experts based on your child’s interests.</li>
-            <li>24/7 homework and assignment support.</li>
-        </ul>
-
-        <h4>✅ Social & Behavioral Analysis</h4>
-        <ul>
-            <li>Monitoring and analyzing friend circles and social behavior.</li>
-            <li>Personality development tracking for confidence and self-growth.</li>
-        </ul>
-
-        <h4>✅ Health & Hygiene Monitoring</h4>
-        <ul>
-            <li>Tracking physical activity and sports participation.</li>
-            <li>Regular health checks conducted by doctors for early symptom detection.</li>
-        </ul>
-
-        <h4>✅ Weekly Personalized Reports</h4>
-        <ul>
-            <li>Password-protected reports delivered via email and WhatsApp.</li>
-            <li>Updates on academic progress, behavior, health, and expert advice.</li>
-        </ul>
-
-        <h4>✅ Daily Activity & Thought Process Analysis</h4>
-        <ul>
-            <li>Time management tracking (study time, screen time, social media usage, etc.).</li>
-            <li>Behavioral insights and productivity improvement tips.</li>
-        </ul>
-
-        <h4>📩 Get Started Today! Let us help your child reach their full potential.</h4>
+        <p>Details about services for schools and students...</p>
     </section>
-    
+
     <section id="join">
         <h2>Join Us</h2>
         <p>Become a part of TrackMyGrowth and help shape the future of education.</p>
         <a href="#" class="btn">Sign Up Now</a>
     </section>
-    
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Sheikh Mohd Daood</p>
-        <p>Email: info@trackmygrowth.in</p>
-        <p>Phone: +91 9795776786</p>
-    </section>
-    
-    <section id="loginForm" class="hidden login-box">
-        <h2>Employee Login</h2>
-        <input type="text" id="username" placeholder="Username"><br><br>
-        <input type="password" id="password" placeholder="Password"><br><br>
-        <button onclick="validateLogin()">Login</button>
-    </section>
-    
-    <section id="reportForm" class="hidden report-box">
-        <h2>Weekly Report</h2>
-        <p>Contact No: +91 9795776786, 8929150711</p>
-        <p>Email ID: info.trackmygrowth@gmail.com</p>
-        <p>Date: 25th March 2025</p>
-        <h3>Student Information</h3>
-        <p>St. Name: XYZ | Age: 5yrs | Parent Name: ABC | Class: 1st | School: ABC Public School</p>
-        <h3>School & Syllabus Analysis</h3>
-        <p>Syllabus Knowledge: 90/100 - Needs regular revision</p>
-        <p>Main Subjects: 77/100 - Good improvement</p>
-        <p>Weak Points: 75/100 - Needs focus</p>
-        <h3>Hygiene Analysis</h3>
-        <p>Physical Activity: 6.6/10 - Play outdoors for 30 min</p>
-        <h3>Ranking</h3>
-        <p>City Rank: 27 | All India Rank: 187</p>
-        <p>End of Report</p>
-    </section>
-     <section id="team">
+
+    <section id="team">
         <h2>Our Team</h2>
-        <div class="team-container" onclick="toggleTeam()">
-            <strong>Click to View Our Team</strong>
-        </div>
-        <ul id="teamList" class="team-members">
+        <ul>
             <li><strong>S.M. Daood</strong> – Founder & CEO</li>
             <li><strong>Alisha Hameed</strong> – Functionality Head</li>
             <li><strong>Khushnuma Parveen</strong> – Analytics Head</li>
             <li><strong>Uzma Parveen</strong> – Quality Head (Academic)</li>
             <li><strong>Neha</strong> – Quality Head (Medical)</li>
         </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@trackmygrowth.in</p>
+        <p>Phone: +91 9795776786</p>
+    </section>
+
+    <section id="loginForm" class="login-box">
+        <h2>Employee Login</h2>
+        <input type="text" id="username" placeholder="Username"><br><br>
+        <input type="password" id="password" placeholder="Password"><br><br>
+        <button onclick="validateLogin()">Login</button>
+    </section>
+
+    <section id="reportForm" class="report-box">
+        <h2>Weekly Report</h2>
+        <p>Student Information & Analysis...</p>
+    </section>
+
     <footer>
         &copy; 2025 TrackMyGrowth. All rights reserved.
     </footer>
