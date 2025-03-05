@@ -1,252 +1,862 @@
-
-
-    <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrackMyGrowth</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background: #0073e6;
-            color: white;
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        header img {
-            height: 50px;
-            vertical-align: middle;
-            margin-right: 10px;
-        }
-        nav {
-            background: #005bb5;
-            padding: 10px;
-        }
-        nav a {
-            color: pink;
-            text-decoration: none;
-            margin: 15px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        section {
-            padding: 50px;
-            background: orange;
-            margin: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: none;
-        }
-        footer {
-            background: #0073e6;
-            color: white;
-            padding: 10px;
-            width: 100%;
-            position: relative;
-        }
-        .btn {
-            background: #ff6600;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .btn:hover {
-            background: #cc5200;
-        }
-    </style>
-    <script>
-        function showSection(sectionId) {
-            document.querySelectorAll('section').forEach(section => {
-                section.style.display = 'none';
-            });
-            document.getElementById(sectionId).style.display = 'block';
-        }
+  <!-- Site made with Mobirise Online Website Builder v5.9.13, https://a.mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v5.9.13, a.mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="https://r.mobirisesite.com/1258954/assets/images/photo-1521587760476-6c12a4b04-h_m7t8rcuq.jpg" type="image/x-icon">
+  <meta name="description" content="Empowering Schools & Students">
+  <title>TrackMyGrowth</title>
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1258954/assets/web/assets/mobirise-icons2/mobirise2.css?rnd=1741024292632">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1258954/assets/bootstrap/css/bootstrap.min.css?rnd=1741024292632">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1258954/assets/bootstrap/css/bootstrap-grid.min.css?rnd=1741024292632">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1258954/assets/bootstrap/css/bootstrap-reboot.min.css?rnd=1741024292632">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1258954/assets/parallax/jarallax.css?rnd=1741024292632">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1258954/assets/dropdown/css/style.css?rnd=1741024292632">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1258954/assets/socicon/css/styles.css?rnd=1741024292632">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1258954/assets/theme/css/style.css?rnd=1741024292632">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Liter&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Liter&display=swap&display=swap"></noscript>
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1258954/assets/css/mbr-additional.css?rnd=1741024292632" type="text/css">
+  
+  
+  
+  
 
-        function employeeLogin() {
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
+<style>
+.navbar-fixed-top {
+  top: auto;
+}
+#mobirisePromo.container-banner {
+  height: 11rem;
+  opacity: 1;
+  -webkit-animation: 11s linear animationHeight;
+  -moz-animation: 11s linear animationHeight;
+    -o-animation: 11s linear animationHeight;
+       animation: 11s linear animationHeight;
+       transition: all  0.5s;
+}
+#mobirisePromo.container-banner.container-banner-closing {
+  pointer-events: none;
+  height: 0;
+  opacity: 0;
+  -webkit-animation: 0.5s linear animationClosing;
+  -moz-animation:  0.5s linear animationClosing;
+    -o-animation:  0.5s linear animationClosing;
+       animation:  0.5s linear animationClosing;
+}
+#mobirisePromo .banner {
+  min-height: 11rem;
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 10px;
+  opacity:1;
+  -webkit-animation: 11s linear animationBanner;
+  -moz-animation: 11s linear animationBanner;
+    -o-animation: 11s linear animationBanner;
+       animation: 11s linear animationBanner;
+  z-index: 1031;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#mobirisePromo .banner p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  animation: none;
+  visibility: visible;
+}
+#mobirisePromo .buy-license {
+  text-decoration: underline;
+}
+#mobirisePromo .banner .btn {
+  margin: 0.3rem 0.5rem;
+  animation: none;
+  visibility: visible;
+}
+.navbar.opened {
+    z-index: 1032;
+}
+#mobirisePromo .mbr-section-abuse-report {
+  margin-top: 0.8rem;
+  font-size: 80%;
+}
+#mobirisePromo .mbr-section-abuse-report a {
+  color: #aaa;
+}
+@-webkit-keyframes animationBanner { 0% { opacity: 0; top: -11rem; } 91% { opacity: 0; top: -11rem; } 100% { opacity: 1; top: 0; } }
+@-moz-keyframes animationBanner { 0% { opacity: 0; top: -11rem; } 91% { opacity: 0; top: -11rem; } 100% { opacity: 1; top: 0; } }
+@-o-keyframes animationBanner { 0% { opacity: 0; top: -11rem; } 91% { opacity: 0; top: -11rem; } 100% { opacity: 1; top: 0; } }
+   @keyframes animationBanner { 0% { opacity: 0; top: -11rem; } 91% { opacity: 0; top: -11rem; } 100% { opacity: 1; top: 0; } }
+@-webkit-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 11rem; } }
+@-moz-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 11rem; } }
+@-o-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 11rem; } }
+   @keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 11rem; } }
 
-            // Replace with actual login validation
-            if (username === "admin" && password === "password") {
-                alert("Login Successful!");
-                window.location.href = "student-data.html"; // Redirect after login
-            } else {
-                alert("Invalid credentials. Please try again.");
-            }
-        }
-    </script>
+@-webkit-keyframes animationClosing { 0% { height: 11rem; opacity: 1; } 30% { height: 11rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@-moz-keyframes animationClosing { 0% { height: 11rem; opacity: 1; } 30% { height: 11rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@-o-keyframes animationClosing { 0% { height: 11rem; opacity: 1; } 30% { height: 11rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@keyframes animationClosing { 0% { height: 11rem; opacity: 1; } 30% { height: 11rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+
+@media(max-width: 575px) {
+  #mobirisePromo.container-banner {
+    height: 14rem;
+  }
+  #mobirisePromo .banner {
+    min-height: 14rem;
+  }
+  @-webkit-keyframes animationBanner { 0% { opacity: 0; top: -14rem; } 91% { opacity: 0; top: -14rem; } 100% { opacity: 1; top: 0; } }
+  @-moz-keyframes animationBanner { 0% { opacity: 0; top: -14rem; } 91% { opacity: 0; top: -14rem; } 100% { opacity: 1; top: 0; } }
+  @-o-keyframes animationBanner { 0% { opacity: 0; top: -14rem; } 91% { opacity: 0; top: -14rem; } 100% { opacity: 1; top: 0; } }
+    @keyframes animationBanner { 0% { opacity: 0; top: -14rem; } 91% { opacity: 0; top: -14rem; } 100% { opacity: 1; top: 0; } }
+  @-webkit-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 14rem; } }
+  @-moz-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 14rem; } }
+  @-o-keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 14rem; } }
+    @keyframes animationHeight { 0% { height: 0; } 91% { height: 0; } 100% { height: 14rem; } }
+
+  @-webkit-keyframes animationClosing { 0% { height: 14rem; opacity: 1; } 30% { height: 14rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @-moz-keyframes animationClosing { 0% { height: 14rem; opacity: 1; } 30% { height: 14rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @-o-keyframes animationClosing { 0% { height: 14rem; opacity: 1; } 30% { height: 14rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @keyframes animationClosing { 0% { height: 14rem; opacity: 1; } 30% { height: 14rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+}
+</style>
 </head>
 <body>
+<div class="container-banner" id="mobirisePromo">
+  <div class="banner align-center">
+    <button type="button" onclick="document.getElementById('mobirisePromo').classList.add('container-banner-closing')" class="btn-close" aria-label="Close" style="position: fixed;top: 16px;right: 16px;"></button>
+    <p class="mbr-text mbr-fonts-style display-7">The site was made with <a href="https://mobirise.com/builder/ai-website-builder.html" class="">Free AI Website Builder</a></p>
+    <div class="mbr-section-btn">
+      <a class="btn btn-sm btn-primary display-4" href="https://mobirise.com/p/">Get AI Kit!</a>
+      <a class="btn btn-sm btn-secondary display-4" href="https://my.mobirise.com/buy.php?p=126&u=3830552&st=1258954&dm=trackmygrowth.mobirisesite.com">Remove This Banner</a>
+    </div>
+    <div class="mbr-section-abuse-report">
+      <a href="mailto:support@mobirise.com?subject=Mobirise Abuse Report trackmygrowth.mobirisesite.com">Report Abuse</a>
+    </div>
+  </div>
+</div>
+  
+  <section data-bs-version="5.1" class="menu menu2 cid-uEoD7nWJKy" once="menu" id="menu-5-uEoD7nWJKy">
+	
 
-    <header>
-       <img src="final_logo.png" alt="TrackMyGrowth Logo">
+	<nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+		<div class="container">
+			<div class="navbar-brand">
+				<span class="navbar-logo">
+					<a href="https://mobiri.se">
+						<img src="https://r.mobirisesite.com/1258954/assets/images/photo-1521587760476-6c12a4b04-h_m7t8rcuq.jpg" alt="Mobirise Website Builder" style="height: 4.3rem;">
+					</a>
+				</span>
+				<span class="navbar-caption-wrap"><a class="navbar-caption text-black display-4" href="https://mobiri.se">TrackMyGrowth</a></span>
+			</div>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<div class="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
+						<a class="nav-link link text-black display-4" href="https://mobiri.se">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link link text-black display-4" href="https://mobiri.se" aria-expanded="false">Features</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link link text-black display-4" href="https://mobiri.se">Contact</a>
+					</li></ul>
+				
+				<div class="navbar-buttons mbr-section-btn">
+					<a class="btn btn-primary display-4" href="https://mobiri.se">Get Started</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+</section>
+
+<section data-bs-version="5.1" class="header16 cid-uEoD7oe6Mr mbr-fullscreen mbr-parallax-background" id="hero-17-uEoD7oe6Mr">
+  
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="content-wrap col-12 col-md-12">
+        <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-7">Welcome to TrackMyGrowth<br>At TrackMyGrowth, we understand that every child is unique—with their own strengths, challenges, and dreams—and every school plays a vital role in nurturing these young minds. But in today’s fast-paced world, it can be challenging for parents and schools to stay on top of a child’s education, behavior, and overall development.
+<div>That’s where we come in!
+</div><div>We offer a powerful, easy-to-use platform designed to support both schools and parents in tracking academic progress, social behavior, and emotional well-being—all in real-time. Our mission is to empower schools to reach new heights of excellence while helping parents stay connected and involved in their child’s journey to success.
+</div><div>Whether you’re a school leader aiming to elevate your institution or a parent striving to help your child thrive, our expert guidance, innovative tools, and personalized support will help you achieve your goals.
+</div><div>🌟 Why Choose TrackMyGrowth?
+</div><div>•	For schools, we offer city-wise rankings, faculty development programs, infrastructure assessments, and expert-led exam support—helping you set the standard for educational excellence.
+</div><div>•	For parents, we provide academic tracking, personalized counseling, behavior analysis, and health monitoring ensuring your child grows into the best version of themselves.
+</div><div>Let’s build a future where every school leads and every child shines!
+</div><div>Don’t just keep up with the times—set new standards of success with TrackMyGrowth.
+</div><div>🚀 Let’s grow, inspire, and lead—together!
+</div><div>Warm regards,&nbsp;&nbsp;&nbsp;&nbsp;
+</div><div>The TrackMyGrowth Team
+</div><div>&nbsp;<br><strong><br></strong></div></h1>
+        
+        
+        <div class="mbr-section-btn"><a class="btn btn-white-outline display-7" href="https://form.jotform.com/250492894865473">Join Us</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="list05 cid-uEoD7ogcAn" id="faq-3-uEoD7ogcAn">
+    
+    <div class="container">
+        <div class="col-12 mb-5 content-head">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong>Frequently Asked Questions</strong>
+            </h3>
+            
+        </div>
+        <div class="row justify-content-center ">
+            <div class="col-12 col-lg-8">
+                <div class="item features-without-image col-12 active">
+                    <div class="item-wrapper">
+                        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                            <strong>What is TrackMyGrowth?</strong></h5>
+                        <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">TrackMyGrowth is an advanced student monitoring and school development platform designed to empower both parents and educational institutions. It provides real-time insights into a child’s academic progress, cognitive skills, social behavior, and overall well-being, ensuring a holistic approach to education.<br><br>For schools, TrackMyGrowth offers performance tracking, school inspections, faculty development, and ranking systems to help institutions improve teaching standards and infrastructure.<br><br>For parents, the platform delivers personalized reports, expert counseling, academic tracking, and behavioral analysis, making it easier to support a child’s growth and future success.<br><br>🚀 With TrackMyGrowth, education becomes data-driven, insightful, and transformative—ensuring that every student reaches their full potential!</p>
+                    </div>
+                </div>
+                <div class="item features-without-image col-12">
+                    <div class="item-wrapper">
+                        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                            <strong>How does it help schools?</strong></h5>
+                        <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">rackMyGrowth empowers schools by providing data-driven insights, performance monitoring, and expert support to enhance educational quality and student success.<br><br>✅ Key Benefits for Schools:<br>🔹 Academic Performance Monitoring – Regular assessments, student progress tracking, and city-wise benchmarking to improve learning outcomes.<br><br>🔹 School Inspections &amp; Quality Audits – Monthly evaluations of infrastructure, hygiene, water/air quality, classroom conditions, and transport safety to ensure a safe learning environment.<br><br>🔹 Faculty Development &amp; Teacher Support – Expert-led teacher training programs, modern teaching methods, and assistance in hiring qualified faculty for better education delivery.<br><br>🔹 Growth &amp; Ranking System – Confidential performance reports comparing schools city-wide, helping institutions identify improvement areas and attract more students.<br><br>🔹 Exam Support &amp; Extra Classes – Special exam preparation sessions, study plans, and expert-led classes to boost student performance.<br><br>🚀 TrackMyGrowth helps schools set new benchmarks for excellence, ensuring holistic development for students while improving institutional reputation and academic success!</p>
+                    </div>
+                </div>
+                <div class="item features-without-image col-12">
+                    <div class="item-wrapper">
+                        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                            <strong>Can parents access the platform?</strong></h5>
+                        <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">Absolutely! Parents can track their child's progress.</p>
+                    </div>
+                </div>
+                <div class="item features-without-image col-12">
+                  <div class="item-wrapper">
+                      <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                          <strong>Is it user-friendly?</strong></h5>
+                      <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">Yes, designed for everyone—no tech degree needed!</p>
+                  </div>
+              </div>
+              <div class="item features-without-image col-12">
+                <div class="item-wrapper">
+                    <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                        <strong>What makes it unique?</strong></h5>
+                    <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">TrackMyGrowth stands out as a one-of-a-kind platform that bridges the gap between schools, parents, and students, offering real-time insights, expert guidance, and advanced monitoring tools.<br><br>✅ Key Features That Set Us Apart:<br>🔹 Comprehensive Student Monitoring – Unlike traditional systems, TrackMyGrowth tracks academic progress, cognitive skills, social behavior, and health all in one place.<br><br>🔹 City, State &amp; National-Level Rankings – A unique benchmarking system that compares student performance with 10,000+ students nationwide.<br><br>🔹 Confidential School Growth &amp; Performance Reports – Monthly school inspections, infrastructure audits, and faculty assessments to help institutions continuously improve.<br><br>🔹 Expert-Led Counseling &amp; Support – 24/7 academic assistance, career counseling, and emotional well-being support for students.<br><br>🔹 Advanced School Development Solutions – Offers teacher training, extra classes, hiring assistance, and performance-based admissions support to help schools grow.<br><br>🔹 Parent-Friendly Insights &amp; Reports – Weekly personalized reports, delivered via WhatsApp and email, keeping parents informed without overwhelming them.<br><br>🚀 TrackMyGrowth isn’t just about education—it’s about transforming learning experiences for students, empowering schools, and keeping parents actively involved in their child’s journey to success!</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="gallery07 cid-uEoD7ohB2f" id="gallery-16-uEoD7ohB2f">
+  
+  
+  <div class="container-fluid gallery-wrapper">
+    <div class="row justify-content-center">
+      <div class="col-12 content-head">
+        <div class="mbr-section-head mb-5">
+          <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+            <strong>Our Impact in Action</strong>
+          </h4>
+          
+        </div>
+      </div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-container-3 moving-left" style="transform: translate3d(-200px, 0px, 0px);">
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/1258954/assets/images/photo-1571260899304-425eee4c7efc.jpeg" alt="Mobirise Website Builder">
+        </div>
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/1258954/assets/images/gde430ca91d9d9803424e4caf6e2b-h_m7t9ofs2.png" alt="Mobirise Website Builder">
+        </div>
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/1258954/assets/images/photo-1546410531-bb4caa6b424d.jpeg" alt="Mobirise Website Builder">
+        </div>
+        <div class="grid-item">
+          <img src="https://r.mobirisesite.com/1258954/assets/images/photo-1497633762265-9d179a990aa6.jpeg" alt="Mobirise Website Builder">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="article9 cid-uEoD7onamE" id="about-us-9-uEoD7onamE">
+  
+
+  
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="card col-md-12 col-lg-10">
+        <div class="card-wrapper">
+          <div class="card-content-text">
+            <h3 class="card-title mbr-fonts-style mbr-white mt-3 mb-4 display-2">
+            <strong>Our Mission &amp; Vision</strong>
+          </h3>
+          <div class="row card-box align-left">
+            <div class="item features-without-image col-12">
+              <div class="item-wrapper">
+                
+                <p class="mbr-text mbr-fonts-style display-7">At TrackMyGrowth, we believe in the power of knowledge. Our mission is to provide parents and schools with the tools they need to monitor student progress in real-time. Forget the old-school methods; we’re here to shake things up!</p>
+              </div>
+            </div>
+            <div class="item features-without-image col-12">
+              <div class="item-wrapper">
+                
+                <p class="mbr-text mbr-fonts-style display-7">We’re not just about numbers; we’re about transforming educational experiences. Our expert-driven solutions are designed to enhance learning environments, making them more engaging and effective. Who said learning has to be boring?</p>
+              </div>
+            </div>
+            <div class="item features-without-image col-12">
+              <div class="item-wrapper">
+                
+                <p class="mbr-text mbr-fonts-style display-7">Join us in our quest to ensure every child reaches their full potential. With data-driven evaluations and faculty development, we’re on a mission to make education exciting and impactful. Let’s make some noise!</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="image-wrapper d-flex justify-content-center mt-3">
+            <img src="https://r.mobirisesite.com/1258954/assets/images/gb226377623c68a03726028c0a8c4-h_m7t9x25e.jpg" alt="Mobirise Website Builder">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="gallery10 cid-uEoD7on1xL" id="features-69-uEoD7on1xL">
+  
+
+
+  <div class="container-fluid">
+
+      <div class="loop-container">
+        <div class="item display-1" data-linewords="Real-Time Monitoring for Every Student * Tailored Insights for Academic Success * " data-direction="-1" data-speed="0.05">☁️ Best offers ☁️ Free delivery ☁️ Perfect design ☁️ Comfort ☁️ Support 24/7 ☁️ Vibes</div>
+
+        <div class="item display-1" data-linewords="Real-Time Monitoring for Every Student * Tailored Insights for Academic Success * " data-direction="-1" data-speed="0.05">☁️ Best offers ☁️ Free delivery ☁️ Perfect design ☁️ Comfort ☁️ Support 24/7 ☁️ Vibes</div>
+      </div>
+    
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="pricing1 cid-uEoD7ooeag" id="pricing-cards-1-uEoD7ooeag">
+    
+    
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head mb-5">
+                    <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                        <strong>Pricing Plans</strong>
+                    </h4>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb active">
+                <div class="item-wrapper">
+                    <div class="item-head">
+                        <h5 class="item-title mbr-fonts-style mb-0 display-4"><strong>School plan</strong></h5>
+                        <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"><strong>₹&nbsp; Free</strong></h6>
+                    </div>
+                    <div class="item-content">
+                        <p class="mbr-text mbr-fonts-style display-4">✅ Academic Performance Monitoring &amp; Student Development<br>✅ Monthly School Performance Monitoring<br>✅ School Growth, Inspection Test &amp; Ranking System<br>✅ Faculty Development &amp; Teacher Support<br>✅ Expert-Led Exam Support<br></p>
+                    </div>
+                    <div class="mbr-section-btn item-footer"><a href="mailto:info@trackmygrowth.in" class="btn item-btn btn-primary display-7">Get Started</a></div>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb">
+                <div class="item-wrapper">
+                    <div class="item-head">
+                        <h5 class="item-title mbr-fonts-style mb-0 display-4">
+                            <strong>Parents&nbsp; Plan</strong>
+                        </h5>
+                        <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"><strong>₹ (one month or 4 reports free)</strong></h6>
+                    </div>
+                    <div class="item-content">
+                        <p class="mbr-text mbr-fonts-style display-4">✅ Academic Performance Tracking &amp; Subject Improvement<br>✅ Cognitive &amp; Skill Development Analysis<br>✅ Social &amp; Behavioral Analysis<br>✅ Health &amp; Hygiene Monitoring<br>✅ Personalized Counseling &amp; Academic Support<br>✅ Weekly Personalized Report&nbsp;<br>✅ National-Level Knowledge Ranking &amp; Benchmarking<br>✅ Daily Activity &amp; Thought Process Analysis<br><br></p>
+                    </div>
+                    <div class="mbr-section-btn item-footer"><a href="mailto:info@trackmygrowth.in" class="btn item-btn btn-primary display-7">Get Started</a></div>
+                </div>
+            </div>
+
+            <div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb">
+                <div class="item-wrapper">
+                    <div class="item-head">
+                        <h5 class="item-title mbr-fonts-style mb-0 display-4">&nbsp;+2 to Higher-Level Students Plan</h5>
+                        <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7">₹ 299/Month</h6>
+                    </div>
+                    <div class="item-content">
+                        <p class="mbr-text mbr-fonts-style display-4">✅ Academic Performance Monitoring – Track subject-wise progress, identify weak areas &amp; get personalized improvement plans.<br>✅ National-Level Ranking &amp; Benchmarking – Compare your performance with students at city, state, and national levels.<br>✅ Career Guidance &amp; Counseling – Get expert advice on career paths, college selection, and competitive exams.<br>✅ 24/7 Study Support – Access homework help, doubt-solving sessions, and expert-led exam preparation classes.<br>✅ Time Management &amp; Productivity Tracking – Monitor study habits, screen time, and daily activity patterns for better results.<br>✅ Skill &amp; Personality Development – Improve communication skills, confidence, and leadership abilities through expert sessions.</p>
+                    </div>
+                    <div class="mbr-section-btn item-footer">
+                        <a href="" class="btn item-btn btn-primary display-7">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb">
+                <div class="item-wrapper">
+                    <div class="item-head">
+                        <h5 class="item-title mbr-fonts-style mb-0 display-4"><strong>Coaching Institutes</strong></h5>
+                        <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7">₹ 299/Month</h6>
+                    </div>
+                    <div class="item-content">
+                        <p class="mbr-text mbr-fonts-style display-4">✅ Extra Test Provider – Conduct weekly, monthly &amp; mock tests to track student progress &amp; exam readiness.
+<br>✅ Expert Teacher Visits – Get subject experts for special topics, doubt-clearing sessions &amp; advanced learning.
+<br>✅ Exam-Time Faculty Support – Additional faculty assistance &amp; expert-led revision classes during crucial exams.
+<br>✅ Student Performance Ranking – Compare students' rankings at city, state &amp; national levels for better insights.
+<br>✅ Coaching Institute Ranking – Get confidential reports &amp; performance comparisons to improve reputation &amp; attract more students.&nbsp;<br></p>
+                    </div>
+                    <div class="mbr-section-btn item-footer">
+                        <a href="" class="btn item-btn btn-primary display-7">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="features5 cid-uEoD7opt83" id="features-22-uEoD7opt83">
+    
+
+    
+    
+    <div class="container">
+        <div class="row mb-5 justify-content-center">
+            <div class="col-12 content-head">
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                    <strong>Personalized Academic Insights</strong>
+                </h3>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="card-box align-left">
+                        
+                        <h5 class="card-title mbr-fonts-style display-5">
+                            <strong>Tailored Reports</strong>
+                        </h5>
+                        <p class="card-text mbr-fonts-style display-4">How TrackMyGrowth Creates Deeply Analyzed Reports?<br>At TrackMyGrowth, our report generation process is based on in-depth expert observation, structured evaluation, and data-driven insights to ensure a 360-degree assessment of every student.<br><br>🔹 Step 1: Expert-Led Video Interview<br>A panel of subject specialists, psychologists, and education counselors conducts a detailed one-on-one video call with the student to assess:<br>✅ Academic performance &amp; subject understanding<br>✅ Cognitive skills &amp; problem-solving ability<br>✅ Confidence, communication, and personality traits<br>✅ Social behavior &amp; emotional intelligence<br>✅ Hygiene, health awareness &amp; discipline<br><br>🔹 Step 2: Expert Panel Discussion &amp; Observation<br>During the interview, our entire expert team takes notes, analyzes responses, and evaluates key aspects such as:<br>✔️ Learning speed &amp; concept clarity<br>✔️ Speaking skills, body language &amp; confidence level<br>✔️ Behavior in social and academic situations<br>✔️ Time management, study habits &amp; focus ability<br><br>🔹 Step 3: Data Compilation &amp; Detailed Evaluation<br>After the session, all observations are compiled and cross-examined by experts to ensure accuracy and depth in analysis.<br><br>🔹 Step 4: Personalized Report Generation<br>Based on the assessment, a customized report is created, including:<br>📌 Subject-wise strengths &amp; improvement areas<br>📌 Study strategies &amp; focused learning plans<br>📌 Confidence &amp; communication enhancement tips<br>📌 Career guidance based on aptitude &amp; interest<br>📌 Health, hygiene &amp; personality development recommendations<br><br>🔹 Step 5: Report Delivery &amp; Parental Guidance<br>The final detailed report is shared with students and parents via email &amp; WhatsApp, with an optional counseling session to help them implement expert recommendations.<br><br>🚀 This deep observational approach ensures that every student receives a truly insightful, data-backed, and actionable growth plan for academic and personal success!</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="card-box align-left">
+                        
+                        <h5 class="card-title mbr-fonts-style display-5">
+                            <strong>Data-Driven</strong>
+                        </h5>
+                        <p class="card-text mbr-fonts-style display-4">TrackMyGrowth: A Data-Driven Student Assessment Approach<br>At TrackMyGrowth, we ensure accurate and insightful student evaluations through a data-driven methodology, combining expert analysis with real-time observations.<br><br>🔹 Real-Time Data Collection<br>Each student undergoes a structured video interview, where our expert panel evaluates:<br>✔️ Academic strengths &amp; subject comprehension<br>✔️ Cognitive abilities, memory power &amp; analytical thinking<br>✔️ Communication skills, confidence &amp; personality traits<br>✔️ Time management, study habits &amp; consistency<br>✔️ Health, hygiene &amp; overall well-being<br><br>🔹 Advanced Data Processing &amp; Expert Review<br>Our specialists analyze every response, behavior, and learning pattern, using a mix of qualitative insights and trend analysis.<br>📊 Ranking comparisons (city/state/national level) provide deeper insights into academic standing.<br>📊 Progress tracking helps identify weak areas and improvement scope.<br><br>🔹 Tailored Report Generation<br>Using all collected data, we generate a customized student report with:<br>📌 Subject-wise performance insights &amp; improvement strategies<br>📌 Confidence-building &amp; personality development recommendations<br>📌 Career guidance based on aptitude &amp; interests<br>📌 Health &amp; hygiene observations with suggested actions<br><br>🔹 Delivering Insights &amp; Action Plans<br>📩 Reports are shared via email &amp; WhatsApp, offering clear, data-backed recommendations for both students and parents.<br>💡 Our experts also provide counseling sessions to help implement necessary improvements.<br><br>🚀 By using structured data analysis, expert-driven insights, and performance tracking, TrackMyGrowth ensures every student receives a truly impactful growth plan!</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="card-box align-left">
+                        
+                        <h5 class="card-title mbr-fonts-style display-5">Progress Tracking</h5>
+                        <p class="card-text mbr-fonts-style display-4">Progress Tracking with TrackMyGrowth<br>At TrackMyGrowth, we provide real-time progress tracking to ensure students, parents, schools, and coaching institutes have a clear understanding of academic growth, behavioral development, and skill enhancement.<br><br>🔹 Continuous Academic Monitoring<br>✅ Subject-wise performance tracking to identify strengths &amp; weak areas<br>✅ Weekly &amp; monthly progress assessments for consistent improvement<br>✅ Personalized learning plans based on test scores &amp; expert evaluation<br>✅ City, state, and national-level ranking comparisons for benchmarking<br><br>🔹 Cognitive &amp; Personality Development Tracking<br>✔️ Memory retention &amp; problem-solving ability assessment<br>✔️ Communication, confidence, and leadership skill evaluation<br>✔️ Behavioral growth monitoring, including social interactions &amp; emotional intelligence<br>✔️ Time management &amp; study discipline analysis<br><br>🔹 Health &amp; Hygiene Observations<br>📊 Physical activity, sports participation &amp; overall fitness tracking<br>📊 Hygiene and well-being assessments with recommendations for improvement<br><br>🔹 Actionable Reports &amp; Expert Guidance<br>📩 Personalized progress reports delivered via email &amp; WhatsApp<br>🎯 Expert counseling sessions to help implement necessary improvements<br><br>🚀 With TrackMyGrowth, progress tracking becomes seamless, insightful, and action-driven—ensuring students stay on the path to success!&nbsp;strategies in real-time.</p>
+                        
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="features5 cid-uEoD7osU4p mbr-parallax-background" id="features-33-uEoD7osU4p">
+    
+
+    
+    
+    <div class="container">
+        
+        <div class="row">
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="card-box align-left">
+                        
+                        <h5 class="card-title mbr-fonts-style display-5">
+                            <strong>Inspection Process</strong>
+                        </h5>
+                        <p class="card-text mbr-fonts-style display-7">Rigorous evaluations to boost educational quality.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="card-box align-left">
+                        
+                        <h5 class="card-title mbr-fonts-style display-5">
+                            <strong>Expert Evaluators</strong>
+                        </h5>
+                        <p class="card-text mbr-fonts-style display-7">Professionals dedicated to improving school environments.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="card-box align-left">
+                        
+                        <h5 class="card-title mbr-fonts-style display-5">
+                            <strong>Feedback Loop</strong>
+                        </h5>
+                        <p class="card-text mbr-fonts-style display-7">Continuous improvement through actionable insights.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="card-box align-left">
+                        
+                        <h5 class="card-title mbr-fonts-style display-5">
+                            <strong>Faculty Development</strong>
+                        </h5>
+                        <p class="card-text mbr-fonts-style display-7">Empowering teachers with essential training.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="card-box align-left">
+                        
+                        <h5 class="card-title mbr-fonts-style display-5">
+                            <strong>Infrastructure Upgrades</strong>
+                        </h5>
+                        <p class="card-text mbr-fonts-style display-7">Modernizing facilities for optimal learning.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="card-box align-left">
+                        
+                        <h5 class="card-title mbr-fonts-style display-5">
+                            <strong>Student-Centric</strong>
+                        </h5>
+                        <p class="card-text mbr-fonts-style display-7">Focusing on what truly matters: the students.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="header18 cid-uEoD7otP5r mbr-fullscreen" data-bg-video="https://www.youtube.com/embed/e5Hc2B50Z7c?autoplay=1&amp;loop=1&amp;playlist=e5Hc2B50Z7c&amp;t=20&amp;mute=1&amp;playsinline=1&amp;controls=0&amp;showinfo=0&amp;autohide=1&amp;allowfullscreen=true&amp;mode=transparent" id="video-5-uEoD7otP5r">
+  
+
+  <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(0, 0, 0);"></div>
+  <div class="container-fluid">
+    <div class="row">
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="form1 cid-uEoD7otLMk" id="call-to-action-12-uEoD7otLMk">
+    
+
+    
+
+    <div class="container">
+        <div class="row content-wrapper justify-content-center">
+            <div class="col-lg-7 mbr-form">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h5 class="mbr-section-title mbr-fonts-style mb-5 display-2">
+                        <strong>Join the Education Revolution Today!</strong>
+                    </h5>
+                </div>
+
+                <div class="text-wrapper align-left" data-form-type="formoid">
+                    <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="Yuo8oF0X3/mz1GNNIwqLqM9BNud2Tfb5elUxTS797HnElvmQBlgyxs8Q8UIJWnF33y5m7yPwtrZjlRi/7z7gl6yq4rhS5b6aOnxIDTqFSOiwyOCpYggMA1XglYKYK6Ym">
+                        <div class="row">
+                            <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
+                            <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                                Oops...! some problem!
+                            </div>
+                        </div>
+                        <div class="dragArea row">
+                            <div data-for="email" class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <input type="email" name="email" placeholder="info@trackmygrowth.in" data-form-field="email" class="form-control display-7" value="" id="email-call-to-action-12-uEoD7otLMk">
+                            </div>
+                            <div class="col-auto mbr-section-btn">
+                                <button type="submit" class="w-100 btn btn-primary display-7">Subscribe Now!</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="features023 cid-uEoD7oy2Fg" id="metrics-1-uEoD7oy2Fg">
+
+    
+
+    
+    
+    <div class="container">
+        
+        <div class="row content-row justify-content-center">
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="title mb-2 mb-md-3">
+                        <span class="num mbr-fonts-style display-1">
+                            <strong>95%</strong></span>
+                    </div>
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Student Satisfaction</strong>
+                    </h4>
+                    
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="title mb-2 mb-md-3">
+                        <span class="num mbr-fonts-style display-1">
+                            <strong>80%</strong></span>
+                    </div>
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Improved Grades</strong>
+                    </h4>
+                    
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="title mb-2 mb-md-3">
+                        <span class="num mbr-fonts-style display-1">
+                            <strong>100%</strong></span>
+                    </div>
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Happy Parents</strong>
+                    </h4>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="image02 cid-uEoD7oCn2b mbr-fullscreen mbr-parallax-background" id="image-13-uEoD7oCn2b">
+    
+    
+    <div class="container">
+        <div class="row"></div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="social05 cid-uEoD7oJQ5w" id="follow-us-2-uEoD7oJQ5w">
+    
+
+    
+
+    <div class="container">
+        <div class="row">
+            <h3 class="mbr-section-title align-center mb-5 mbr-fonts-style display-2">
+                <strong>Follow Us on Social Media</strong>
+            </h3>
+            <div class="col-12">
+                <div class="social-row">
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-facebook"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-twitter socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-instagram socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-linkedin"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-twitch"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="form5 cid-uEoD7oJyK0" id="contact-form-2-uEoD7oJyK0">
+    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head mb-5">
+                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                        <strong>Get in Touch!</strong>
+                    </h3>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+                <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="QiZ1Nrg7A1jSw2lxz75xn9l9HerXzvS0BoAmUxaa2xsIgRlcey/J1IoJFjEMIJQ1Fy4/gx4C6PLHy0xmwYQHk5KIbY3QyK5ZWbCgQmEJJtnrBmComXmDR3JQ+giEjMH0">
+                    <div class="row">
+                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                            Oops...! some problem!
+                        </div>
+                    </div>
+                    <div class="dragArea row">
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="name">
+                            <input type="text" name="name" placeholder="Name" data-form-field="name" class="form-control" value="" id="name-contact-form-2-uEoD7oJyK0">
+                        </div>
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+                            <input type="email" name="email" placeholder="Email" data-form-field="email" class="form-control" value="" id="email-contact-form-2-uEoD7oJyK0">
+                        </div>
+                        <div class="col-12 form-group mb-3" data-for="textarea">
+                            <textarea name="textarea" placeholder="Message" data-form-field="textarea" class="form-control" id="textarea-contact-form-2-uEoD7oJyK0"></textarea>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+                            <button type="submit" class="btn btn-primary display-7">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="contacts03 cid-uEoD7oJACx" id="contacts-11-uEoD7oJACx">
+  
+
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-4">
+        <div class="col-12 col-md-12">
+          <h5 class="mbr-section-title mbr-fonts-style mt-0 mb-4 display-2">
+            <strong>Contact Us</strong>
+          </h5>
+          <p class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-7">
+            Phone: +91-9795776786<br>+91-8929150711, +91-7827250401<br>Email: info@trackmygrowth.com
+            <br>Address: Okhla South Delhi 110025&nbsp;<br></p> 
+
+          
+        </div>
+      </div>
+        <div class="col-lg-8 side-features">
+        <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6045.3003145248895!2d-73.9884657!3d40.7477229!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9ac1f1b85%3A0x7e33d1c0e7af3be4!2zMzUwIDV0aCBBdmUsIE5ldyBZb3JrLCBOWSAxMDExOCwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1689597362021!5m2!1sen!2sen" allowfullscreen=""></iframe></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="footer3 cid-uEoD7oK9Ex" once="footers" id="footer-3-uEoD7oK9Ex">
 
         
-        TrackMyGrowth – Empowering Schools & Students
-    </header>
 
-    <nav>
-        <a onclick="showSection('about')">About Us</a>
-        <a onclick="showSection('services')">Our Services</a>
-        <a onclick="showSection('join')">Join Us</a>
-        <a onclick="showSection('team')">Our Team</a>
-        <a onclick="showSection('contact')">Contact Us</a>
-        <a onclick="showSection('employee')">Employee Corner</a>
-    </nav>
+    
 
+    <div class="container">
+        <div class="row">
+            <div class="row-links">
+                <ul class="header-menu">
+                  
+                  
+                  
+                  
+                <li class="header-menu-item mbr-fonts-style display-5">
+                    <a href="#" class="text-white">Home</a>
+                  </li><li class="header-menu-item mbr-fonts-style display-5">
+                    <a href="#" class="text-white">About</a>
+                  </li><li class="header-menu-item mbr-fonts-style display-5">
+                    <a href="#" class="text-white">Services</a>
+                  </li><li class="header-menu-item mbr-fonts-style display-5">
+                    <a href="#" class="text-white">Contact</a>
+                  </li></ul>
+              </div>
 
-   <section id="about">
-        <h2>About Us</h2>
-        <p>About Us
-Empowering Growth, Inspiring Futures
-At TrackMyGrowth, we believe that every child holds limitless potential—and every school plays a pivotal role in unlocking that potential. Our mission is to support parents and schools in nurturing young minds, fostering academic excellence, personal growth, and emotional well-being.
-In today’s fast-paced world, keeping track of a child’s development can be overwhelming for both parents and educators. That’s where we come in. TrackMyGrowth is a revolutionary platform designed to simplify this journey by offering personalized insights, expert guidance, and real-time monitoring of a child’s academic progress, cognitive skills, social behavior, and overall well-being.
-But we don’t stop at supporting children alone. We partner with schools to help them grow, innovate, and set new benchmarks for educational excellence. Our platform offers comprehensive monitoring tools, expert faculty support, school facility inspections, and detailed performance reports—helping institutions create the best learning environment for every student.
-
-🌟 What Sets Us Apart?
-✅ For Parents:
-•	Real-time updates on academic, social, and emotional development
-•	Personalized counseling, career guidance, and national-level rankings
-•	24/7 academic support and health monitoring
-✅ For Schools:
-•	City-wise confidential performance reports and monthly inspections
-•	Third-party education quality audits for unbiased evaluations
-•	Faculty development programs and expert-led extra classes
-•	Assistance with hiring expert teachers and enhancing infrastructure
-
-🚀 Our Vision
-To create a world where every child has the opportunity to grow, learn, and succeed—supported by schools and parents working together in harmony.
-🎯 Our Mission
-To provide data-driven insights, expert guidance, and innovative tools that empower parents and schools to nurture every child’s unique potential.
-
-Join us on this journey of growth and excellence. With TrackMyGrowth, the future isn’t just bright—it’s extraordinary.
-
-
-</p>
-   </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-
-        <h3>For Schools</h3>
-        <h4>✅ Monthly School Performance Monitoring</h4>
-        <ul>
-            <li>Water Quality Testing: Ensuring safe drinking water through regular pH level checks.</li>
-            <li>Air Quality Index Monitoring: Maintaining a healthy learning environment.</li>
-            <li>Classroom Ventilation & Condition Assessment: Optimizing classroom environments for better learning.</li>
-            <li>Cleanliness & Hygiene Audits: Regular inspections to maintain high sanitation standards.</li>
-            <li>Playground & Sports Facilities Testing: Ensuring safety and functionality.</li>
-            <li>Transport Condition Checks: Monitoring school transportation for safety and reliability.</li>
-        </ul>
-
-        <h4>✅ School Growth & Ranking System</h4>
-        <ul>
-            <li>City-wise confidential reports comparing your school’s performance with others.</li>
-            <li>Monthly evaluations to identify improvement opportunities.</li>
-            <li>A dedicated ranking system to enhance your school’s reputation and attract more students.</li>
-        </ul>
-
-        <h4>✅ Faculty Development & Teacher Support</h4>
-        <ul>
-            <li>Professional development workshops on modern teaching methods and classroom management.</li>
-            <li>Expert teachers provided for special subjects to enrich the learning experience.</li>
-            <li>Assistance in recruiting highly qualified teachers for a stronger educational foundation.</li>
-        </ul>
-
-        <h3>For Students</h3>
-        <h4>✅ Academic Performance Tracking & Subject Improvement</h4>
-        <ul>
-            <li>Weekly learning reviews and knowledge tests.</li>
-            <li>Identifying weak subjects and creating focused improvement plans.</li>
-        </ul>
-
-        <h4>✅ Cognitive & Skill Development Analysis</h4>
-        <ul>
-            <li>Memory retention and learning ability assessment.</li>
-            <li>Communication skills evaluation and confidence-building activities.</li>
-            <li>Career guidance from subject experts based on your child’s interests.</li>
-            <li>24/7 homework and assignment support.</li>
-        </ul>
-
-        <h4>✅ Social & Behavioral Analysis</h4>
-        <ul>
-            <li>Monitoring and analyzing friend circles and social behavior.</li>
-            <li>Personality development tracking for confidence and self-growth.</li>
-        </ul>
-
-        <h4>✅ Health & Hygiene Monitoring</h4>
-        <ul>
-            <li>Tracking physical activity and sports participation.</li>
-            <li>Regular health checks conducted by doctors for early symptom detection.</li>
-        </ul>
-
-        <h4>✅ Weekly Personalized Reports</h4>
-        <ul>
-            <li>Password-protected reports delivered via email and WhatsApp.</li>
-            <li>Updates on academic progress, behavior, health, and expert advice.</li>
-        </ul>
-
-        <h4>✅ Daily Activity & Thought Process Analysis</h4>
-        <ul>
-            <li>Time management tracking (study time, screen time, social media usage, etc.).</li>
-            <li>Behavioral insights and productivity improvement tips.</li>
-        </ul>
-
-        <h4>📩 Get Started Today! Let us help your child reach their full potential.</h4>
-    </section>
-
-
-    <section id="join">
-        <h2>Join Us</h2>
-        <p>Become a part of TrackMyGrowth and help shape the future of education.</p>
-        <a href="#" class="btn">Sign Up Now</a>
-    </section>
-
-    <section id="team">
-        <h2>Our Team</h2>
-        <div class="team-container" onclick="toggleTeam()">
-            <strong>Click to View Our Team</strong>
+            <div class="col-12 mt-4">
+                <div class="social-row">
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont display-7 socicon-facebook socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-twitter socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-instagram socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-linkedin"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-twitch"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mt-5">
+                <p class="mbr-fonts-style copyright display-7">© 2025 TrackMyGrowth. All rights reserved.</p>
+            </div>
         </div>
-        <ul id="teamList" class="team-members">
-            <li><strong>S.M. Daood</strong> – <span>Founder & CEO</span></li>
-            <li><strong>Umra Hameed</strong> – <span>Functionality Head</span></li>
-            <li><strong>Khushnuma Parveen</strong> – <span>Analytics Head</span></li>
-            <li><strong>Uzma Parveen</strong> – <span>Quality Head (Academic)</span></li>
-            <li><strong>Neha Parveen</strong> – <span>Quality Head (Medical)</span></li>
-        </ul>
-    </section>
+    </div>
+</section>
 
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: info@trackmygrowth.in</p>
-        <p>Phone: +91 9795776786</p>
-    </section>
-
-   <section id="employee">
-        <h2>Employee Corner</h2>
-        <input type="text" id="username" placeholder="Username"><br><br>
-        <input type="password" id="password" placeholder="Password"><br><br>
-        <button onclick="employeeLogin()">Login</button>
-    </section>
-
-    <footer>
-        &copy; 2025 TrackMyGrowth. All rights reserved.
-    </footer>
-
+  <script src="https://r.mobirisesite.com/1258954/assets/web/assets/jquery/jquery.min.js?rnd=1741024292632"></script>
+  <script src="https://r.mobirisesite.com/1258954/assets/bootstrap/js/bootstrap.bundle.min.js?rnd=1741024292632"></script>
+  <script src="https://r.mobirisesite.com/1258954/assets/parallax/jarallax.js?rnd=1741024292632"></script>
+  <script src="https://r.mobirisesite.com/1258954/assets/smoothscroll/smooth-scroll.js?rnd=1741024292632"></script>
+  <script src="https://r.mobirisesite.com/1258954/assets/ytplayer/index.js?rnd=1741024292632"></script>
+  <script src="https://r.mobirisesite.com/1258954/assets/dropdown/js/navbar-dropdown.js?rnd=1741024292632"></script>
+  <script src="https://r.mobirisesite.com/1258954/assets/scrollgallery/scroll-gallery.js?rnd=1741024292632"></script>
+  <script src="https://r.mobirisesite.com/1258954/assets/vimeoplayer/player.js?rnd=1741024292632"></script>
+  <script src="https://r.mobirisesite.com/1258954/assets/theme/js/script.js?rnd=1741024292632"></script>
+  <script src="https://r.mobirisesite.com/1258954/assets/formoid/formoid.min.js?rnd=1741024292632"></script>
+  
+  
+  
 </body>
 </html>
