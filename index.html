@@ -17,7 +17,8 @@
             background: linear-gradient(90deg, #4CAF50, #007BFF, #FFA500);
         }
         header img {
-            max-width: 120px; /* Reduced logo size */
+            width: 100px; /* Change this value to resize the logo */
+            height: auto; /* Keeps aspect ratio */
         }
         nav {
             display: flex;
@@ -27,7 +28,7 @@
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
         }
         nav a {
             text-decoration: none;
@@ -53,18 +54,11 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         /* Different Background Colors for Sections */
-        #about {
-            background-color: #e6f7e6; /* Light Green */
-        }
-        #services {
-            background-color: #e6f2ff; /* Light Blue */
-        }
-        #faq {
-            background-color: #fff4e6; /* Light Orange */
-        }
-        #join {
-            background-color: #f4f4f4; /* Light Grey */
-        }
+        #about { background-color: #e6f7e6; } /* Light Green */
+        #services { background-color: #e6f2ff; } /* Light Blue */
+        #faq { background-color: #fff4e6; } /* Light Orange */
+        #join { background-color: #f4f4f4; } /* Light Grey */
+
         .content-section {
             display: none;
             padding: 20px;
@@ -115,7 +109,8 @@
 <body>
 
     <div class="header-container">
-        <img src="https://raw.githubusercontent.com/trackmygrowth/trackmygrowth.in/main/Final_Logo.jpg" alt="TrackMyGrowth Logo">
+        <img src="https://raw.githubusercontent.com/trackmygrowth/trackmygrowth.in/main/Final_Logo.jpg" 
+     alt="TrackMyGrowth Logo" width="425" height="auto">
     </div>
 
     <nav>
