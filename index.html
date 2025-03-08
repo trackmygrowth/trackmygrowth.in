@@ -124,6 +124,7 @@
     <a onclick="showSection('join')">Join Us</a>
     <a onclick="showSection('gallery')">Gallery</a> <!-- New Tab Added -->
     <a onclick="showSection('contact')">Contact Us</a>
+    <a onclick="showSection('Employee Corner')">Contact Us</a>
 </nav>
 <a href="https://wa.me/9199776786" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30">
@@ -248,6 +249,7 @@ Don’t just keep up with the times—set new standards of success with TrackMyG
     <title>Employee Corner - TrackMyGrowth</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -255,7 +257,6 @@ Don’t just keep up with the times—set new standards of success with TrackMyG
             padding: 0;
             background-color: #f4f4f4;
             text-align: center;
-            position: relative;
         }
         .container {
             width: 50%;
@@ -285,17 +286,9 @@ Don’t just keep up with the times—set new standards of success with TrackMyG
         .hidden {
             display: none;
         }
-        .date-time {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 14px;
-            color: #333;
-        }
     </style>
 </head>
-<body onload="updateDateTime()">
-    <div class="date-time" id="date-time"></div>
+<body>
     <div class="container" id="login-section">
         <h2>Employee Login</h2>
         <input type="text" id="employee-id" placeholder="Enter Employee ID (e.g., TMG0001)">
@@ -306,57 +299,90 @@ Don’t just keep up with the times—set new standards of success with TrackMyG
 
     <div class="container hidden" id="assessment-form">
         <h2>Student Assessment</h2>
-        <label>Student Code:</label> <input type="text" id="student-code" placeholder="Enter or Generate Code" onblur="loadStudentData()"><br>
+        <label>Student Code:</label> <input type="text" id="student-code"><br>
         <label>Student Name:</label> <input type="text" id="student-name"><br>
-        <label>Grade:</label> <input type="text" id="Grade"><br>
+        <label>Grade:</label> <input type="text" id="grade"><br>
         <label>Class:</label> <input type="text" id="class"><br>
         <label>School Name:</label> <input type="text" id="school-name"><br>
-        <label>Adress:</label> <input type="text" id="Adress"><br>
         <label>City:</label> <input type="text" id="city"><br>
-         <label>Pincode:</label> <input type="text" id="Pincode"><br>
         <label>Date of Birth (DOB):</label> <input type="date" id="dob"><br>
-        
+
         <h3>Assessment Scores (1-100)</h3>
         <label>Neatness:</label> <input type="number" id="neatness" min="1" max="100"><br>
         <label>Handwriting:</label> <input type="number" id="handwriting" min="1" max="100"><br>
         <label>Reading (English):</label> <input type="number" id="reading-english" min="1" max="100"><br>
-        <label>Syllabus Knowledge:</label> <input type="number" id="Syllabus Knowledge" min="1" max="100"><br>
-         <label>Social and Friend circle Behavour :</label> <input type="number" id="Social and Friend circle Behavour" min="1" max="100"><br>
         <label>Reading (Hindi):</label> <input type="number" id="reading-hindi" min="1" max="100"><br>
-        <button onclick="saveData()">Save & Generate Report</button>
-        <h3 id="percentage-result"></h3>
+
+        <button onclick="generatePDF()">Generate PDF</button>
+        <button onclick="sendEmail()">Send to Director</button>
     </div>
 
     <script>
+        function login() {
+            let empId = document.getElementById("employee-id").value;
+            let password = document.getElementById("password").value;
+            
+            if (empId === "TMG0001" && password === "12345") {
+                document.getElementById("login-section").classList.add("hidden");
+                document.getElementById("assessment-form").classList.remove("hidden");
+            } else {
+                document.getElementById("login-error").innerText = "Invalid Employee ID or Password!";
+            }
+        }
+
         function generatePDF() {
             const { jsPDF } = window.jspdf;
             let doc = new jsPDF();
             let studentName = document.getElementById("student-name").value;
             let studentCode = document.getElementById("student-code").value;
-            let password = document.getElementById("dob").value.replace(/-/g, "");
             let timestamp = new Date().toLocaleString();
-            let logo = new Image();
-            logo.src = 'https://raw.githubusercontent.com/trackmygrowth/trackmygrowth.in/main/Final_Logo.jpg';
-            
-            logo.onload = function() {
-                doc.addImage(logo, 'JPEG', 80, 10, 50, 20);
-                doc.setLineWidth(0.5);
-                doc.rect(5, 5, 200, 285);
-                doc.text("Student Report", 80, 40);
-                doc.text(`Student Code: ${studentCode}`, 10, 60);
-                doc.text(`Date & Time: ${timestamp}`, 10, 70);
-                doc.text(`Name: ${studentName}`, 10, 80);
-                doc.text(`Class: ${document.getElementById("class").value}`, 10, 90);
-                doc.text(`School: ${document.getElementById("school-name").value}`, 10, 100);
-                doc.text(`City: ${document.getElementById("city").value}`, 10, 110);
-                doc.text(`DOB: ${document.getElementById("dob").value}`, 10, 120);
-                doc.text("Assessment Scores:", 10, 130);
-                doc.text(`Neatness: ${document.getElementById("neatness").value}`, 10, 140);
-                doc.text(`Handwriting: ${document.getElementById("handwriting").value}`, 10, 150);
-                doc.text(`Reading (English): ${document.getElementById("reading-english").value}`, 10, 160);
-                doc.text(`Reading (Hindi): ${document.getElementById("reading-hindi").value}`, 10, 170);
-                doc.save(`${studentName}_${studentCode}.pdf`);
+
+            doc.text("Student Report", 80, 10);
+            doc.text(`Student Code: ${studentCode}`, 10, 20);
+            doc.text(`Date & Time: ${timestamp}`, 10, 30);
+            doc.text(`Name: ${studentName}`, 10, 40);
+            doc.text(`Class: ${document.getElementById("class").value}`, 10, 50);
+            doc.text(`School: ${document.getElementById("school-name").value}`, 10, 60);
+            doc.text(`City: ${document.getElementById("city").value}`, 10, 70);
+            doc.text(`DOB: ${document.getElementById("dob").value}`, 10, 80);
+            doc.text("Assessment Scores:", 10, 90);
+            doc.text(`Neatness: ${document.getElementById("neatness").value}`, 10, 100);
+            doc.text(`Handwriting: ${document.getElementById("handwriting").value}`, 10, 110);
+            doc.text(`Reading (English): ${document.getElementById("reading-english").value}`, 10, 120);
+            doc.text(`Reading (Hindi): ${document.getElementById("reading-hindi").value}`, 10, 130);
+
+            doc.save(`${studentName}_${studentCode}.pdf`);
+        }
+
+        function sendEmail() {
+            emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS User ID
+
+            let emailParams = {
+                to_email: "info@trackmygrowth.in",
+                subject: `Student Report - ${document.getElementById("student-name").value}`,
+                message: `
+                Student Report:
+                Student Code: ${document.getElementById("student-code").value}
+                Name: ${document.getElementById("student-name").value}
+                Class: ${document.getElementById("class").value}
+                School: ${document.getElementById("school-name").value}
+                City: ${document.getElementById("city").value}
+                DOB: ${document.getElementById("dob").value}
+
+                Scores:
+                Neatness: ${document.getElementById("neatness").value}
+                Handwriting: ${document.getElementById("handwriting").value}
+                Reading (English): ${document.getElementById("reading-english").value}
+                Reading (Hindi): ${document.getElementById("reading-hindi").value}
+                `
             };
+
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", emailParams)
+            .then(function(response) {
+                alert("Email sent successfully to Director!");
+            }, function(error) {
+                alert("Failed to send email.");
+            });
         }
     </script>
 </body>
