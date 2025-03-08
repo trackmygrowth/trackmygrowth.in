@@ -240,10 +240,130 @@ Don’t just keep up with the times—set new standards of success with TrackMyG
 <p>Let’s grow, inspire, and lead—together!<p>
    <p>Warm regards,<p>
 <p>The TrackMyGrowth Team<p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Corner - TrackMyGrowth</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            position: relative;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+        .date-time {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body onload="updateDateTime()">
+    <div class="date-time" id="date-time"></div>
+    <div class="container" id="login-section">
+        <h2>Employee Login</h2>
+        <input type="text" id="employee-id" placeholder="Enter Employee ID (e.g., TMG0001)">
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="login()">Login</button>
+        <p id="login-error" style="color: red;"></p>
+    </div>
+
+    <div class="container hidden" id="assessment-form">
+        <h2>Student Assessment</h2>
+        <label>Student Code:</label> <input type="text" id="student-code" placeholder="Enter or Generate Code" onblur="loadStudentData()"><br>
+        <label>Student Name:</label> <input type="text" id="student-name"><br>
+        <label>Grade:</label> <input type="text" id="Grade"><br>
+        <label>Class:</label> <input type="text" id="class"><br>
+        <label>School Name:</label> <input type="text" id="school-name"><br>
+        <label>Adress:</label> <input type="text" id="Adress"><br>
+        <label>City:</label> <input type="text" id="city"><br>
+         <label>Pincode:</label> <input type="text" id="Pincode"><br>
+        <label>Date of Birth (DOB):</label> <input type="date" id="dob"><br>
+        
+        <h3>Assessment Scores (1-100)</h3>
+        <label>Neatness:</label> <input type="number" id="neatness" min="1" max="100"><br>
+        <label>Handwriting:</label> <input type="number" id="handwriting" min="1" max="100"><br>
+        <label>Reading (English):</label> <input type="number" id="reading-english" min="1" max="100"><br>
+        <label>Syllabus Knowledge:</label> <input type="number" id="Syllabus Knowledge" min="1" max="100"><br>
+         <label>Social and Friend circle Behavour :</label> <input type="number" id="Social and Friend circle Behavour" min="1" max="100"><br>
+        <label>Reading (Hindi):</label> <input type="number" id="reading-hindi" min="1" max="100"><br>
+        <button onclick="saveData()">Save & Generate Report</button>
+        <h3 id="percentage-result"></h3>
+    </div>
+
+    <script>
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            let doc = new jsPDF();
+            let studentName = document.getElementById("student-name").value;
+            let studentCode = document.getElementById("student-code").value;
+            let password = document.getElementById("dob").value.replace(/-/g, "");
+            let timestamp = new Date().toLocaleString();
+            let logo = new Image();
+            logo.src = 'https://raw.githubusercontent.com/trackmygrowth/trackmygrowth.in/main/Final_Logo.jpg';
+            
+            logo.onload = function() {
+                doc.addImage(logo, 'JPEG', 80, 10, 50, 20);
+                doc.setLineWidth(0.5);
+                doc.rect(5, 5, 200, 285);
+                doc.text("Student Report", 80, 40);
+                doc.text(`Student Code: ${studentCode}`, 10, 60);
+                doc.text(`Date & Time: ${timestamp}`, 10, 70);
+                doc.text(`Name: ${studentName}`, 10, 80);
+                doc.text(`Class: ${document.getElementById("class").value}`, 10, 90);
+                doc.text(`School: ${document.getElementById("school-name").value}`, 10, 100);
+                doc.text(`City: ${document.getElementById("city").value}`, 10, 110);
+                doc.text(`DOB: ${document.getElementById("dob").value}`, 10, 120);
+                doc.text("Assessment Scores:", 10, 130);
+                doc.text(`Neatness: ${document.getElementById("neatness").value}`, 10, 140);
+                doc.text(`Handwriting: ${document.getElementById("handwriting").value}`, 10, 150);
+                doc.text(`Reading (English): ${document.getElementById("reading-english").value}`, 10, 160);
+                doc.text(`Reading (Hindi): ${document.getElementById("reading-hindi").value}`, 10, 170);
+                doc.save(`${studentName}_${studentCode}.pdf`);
+            };
+        }
+    </script>
+</body>
+</html>
 
 
     </div>
-
     <div class="container">
         <section id="about" class="content-section">
             <h2>About TrackMyGrowth</h2>
