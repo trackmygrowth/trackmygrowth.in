@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -308,24 +309,129 @@ Don’t just keep up with the times—set new standards of success with TrackMyG
         <button onclick="login()">Login</button>
         <p id="login-error" style="color: red;"></p>
     </div>
+    <!-- Assessment Form -->
+    <div class="assessment-form" id="assessment-section" style="display: none;">
+        <img src="logo.png" alt="TrackMyGrowth Logo" class="logo">
+        <h2>Student Assessment Form</h2>
 
-    <div class="container hidden" id="assessment-form">
-        <h2>Student Assessment</h2>
-        <label>Student Code:</label> <input type="text" id="student-code"><br>
         <label>Student Name:</label> <input type="text" id="student-name"><br>
-        <label>Grade:</label> <input type="text" id="grade"><br>
-        <label>Class:</label> <input type="text" id="class"><br>
-        <label>School Name:</label> <input type="text" id="school-name"><br>
-        <label>City:</label> <input type="text" id="city"><br>
-        <label>Date of Birth (DOB):</label> <input type="date" id="dob"><br>
+        <label>Student Code:</label> <input type="text" id="student-code"><br>
+        <label>Student DOB:</label> <input type="date" id="student-dob"><br>
 
-        <h3>Assessment Scores (1-100)</h3>
+        <h3>1. Physical Health</h3>
         <label>Neatness:</label> <input type="number" id="neatness" min="1" max="100"><br>
-        <label>Handwriting:</label> <input type="number" id="handwriting" min="1" max="100"><br>
-        <label>Reading (English):</label> <input type="number" id="reading-english" min="1" max="100"><br>
-        <label>Reading (Hindi):</label> <input type="number" id="reading-hindi" min="1" max="100"><br>
+        <label>Weight:</label> <input type="number" id="weight" min="1" max="100"><br>
+        <label>Water Intake:</label> <input type="text" id="water-intake"><br>
+        <label>Allergies:</label> <input type="text" id="allergies"><br>
+        <label>Sleep Hours:</label> <input type="text" id="sleep-hours"><br>
+        <label>Physical Activities:</label> <input type="text" id="physical-activities"><br>
 
-        <button onclick="generatePDF()">Generate PDF</button>
+        <h3>2. Mental Health</h3>
+        <label>Stress Level:</label> <input type="text" id="stress"><br>
+        <label>Comfort in Sharing Problems:</label> <input type="text" id="sharing-problems"><br>
+        <label>Social Difficulties:</label> <input type="text" id="social-difficulties"><br>
+
+        <h3>3. Education & Learning</h3>
+        <label>Difficult Subject:</label> <input type="text" id="difficult-subject"><br>
+        <label>Preferred Teaching Method:</label> <input type="text" id="teaching-method"><br>
+        <label>Reading (Hindi):</label> <input type="number" id="reading-hindi" min="1" max="100"><br>
+        <label>Reading (English):</label> <input type="number" id="reading-english" min="1" max="100"><br>
+        <label>Handwriting (English):</label> <input type="number" id="handwriting-english" min="1" max="100"><br>
+        <label>Handwriting (Hindi):</label> <input type="number" id="handwriting-hindi" min="1" max="100"><br>
+        <label>Maths Test:</label> <input type="number" id="maths-test" min="1" max="100"><br>
+        <label>Overall Syllabus Knowledge:</label> <input type="number" id="overall-syllabus" min="1" max="100"><br>
+
+        <h3>4. Lifestyle & Daily Routine</h3>
+        <label>Screen Time:</label> <input type="text" id="screen-time"><br>
+        <label>Exercise/Yoga:</label> <input type="text" id="exercise"><br>
+        <label>Balanced Diet:</label> <input type="text" id="diet"><br>
+        <label>Self-Study Hours:</label> <input type="text" id="self-study-time"><br>
+
+        <h3>5. School Environment & Safety</h3>
+        <label>School Cleanliness:</label> <input type="text" id="school-cleanliness"><br>
+        <label>Safe Drinking Water:</label> <input type="text" id="school-water-air"><br>
+        <label>Bullying/Harassment:</label> <input type="text" id="bullying"><br>
+        <label>School Transport Safety:</label> <input type="text" id="school-transport"><br>
+
+        <h3>6. Career & Future Goals</h3>
+        <label>Future Goals:</label> <input type="text" id="future-goal"><br>
+        <label>Need for Career Guidance:</label> <input type="text" id="career-guidance"><br>
+        <label>Competitive Exam Preparation:</label> <input type="text" id="competitive-exams"><br>
+
+        <button onclick="generatePDF()">Save as PDF</button>
+        <button onclick="sendEmail()">Send to Director</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        function login() {
+            const employeeID = document.getElementById("employee-id").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (employeeID === "TMG0001" && password === "12345") {
+                document.getElementById("login-section").style.display = "none";
+                document.getElementById("assessment-section").style.display = "block";
+            } else {
+                document.getElementById("login-error").innerText = "Invalid Employee ID or Password!";
+            }
+        }
+
+        function logout() {
+            document.getElementById("assessment-section").style.display = "none";
+            document.getElementById("login-section").style.display = "block";
+            document.getElementById("employee-id").value = "";
+            document.getElementById("password").value = "";
+        }
+
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            let studentName = document.getElementById("student-name").value;
+            let studentCode = document.getElementById("student-code").value;
+            let date = new Date().toISOString().split('T')[0];
+            let fileName = `${studentName}_${studentCode}_${date}.pdf`;
+
+            
+            doc.text("Student Assessment Report", 10, 10);
+    doc.text(`Student Name: ${studentName}`, 10, 20);
+    doc.text(`Student Code: ${studentCode}`, 10, 30);
+    doc.text(`Student DOB: ${studentDOB}`, 10, 40);
+    doc.text("1. Physical Health", 10, 50);
+    doc.text(`Neatness: ${document.getElementById("neatness").value}`, 10, 60);
+    doc.text(`Weight: ${document.getElementById("weight").value}`, 10, 70);
+    doc.text(`Water Intake: ${document.getElementById("water-intake").value}`, 10, 80);
+    doc.text(`Allergies: ${document.getElementById("allergies").value}`, 10, 90);
+    doc.text(`Sleep Hours: ${document.getElementById("sleep-hours").value}`, 10, 100);
+    doc.text(`Physical Activities: ${document.getElementById("physical-activities").value}`, 10, 110);
+    doc.text("2. Mental Health", 10, 120);
+    doc.text(`Stress Level: ${document.getElementById("stress").value}`, 10, 130);
+    doc.text(`Comfort in Sharing Problems: ${document.getElementById("sharing-problems").value}`, 10, 140);
+    doc.text(`Social Difficulties: ${document.getElementById("social-difficulties").value}`, 10, 150);
+    doc.text("3. Education & Learning", 10, 160);
+    doc.text(`Difficult Subject: ${document.getElementById("difficult-subject").value}`, 10, 170);
+    doc.text(`Preferred Teaching Method: ${document.getElementById("teaching-method").value}`, 10, 180);
+    doc.text(`Reading (Hindi): ${document.getElementById("reading-hindi").value}`, 10, 190);
+    doc.text(`Reading (English): ${document.getElementById("reading-english").value}`, 10, 200);
+    doc.text(`Handwriting (English): ${document.getElementById("handwriting-english").value}`, 10, 210);
+    doc.text(`Handwriting (Hindi): ${document.getElementById("handwriting-hindi").value}`, 10, 220);
+    doc.text(`Maths Test: ${document.getElementById("maths-test").value}`, 10, 230);
+    doc.text(`Overall Syllabus Knowledge: ${document.getElementById("overall-syllabus").value}`, 10, 240);
+    doc.text("4. Lifestyle & Daily Routine", 10, 250);
+    doc.text(`Screen Time: ${document.getElementById("screen-time").value}`, 10, 260);
+    doc.text(`Exercise/Yoga: ${document.getElementById("exercise").value}`, 10, 270);
+    doc.text(`Balanced Diet: ${document.getElementById("diet").value}`, 10, 280);
+    doc.text(`Self-Study Hours: ${document.getElementById("self-study-time").value}`, 10, 290);
+    doc.text("5. School Environment & Safety", 10, 300);
+    doc.text(`School Cleanliness: ${document.getElementById("school-cleanliness").value}`, 10, 310);
+    doc.text(`Safe Drinking Water: ${document.getElementById("school-water-air").value}`, 10, 320);
+    doc.text(`Bullying/Harassment: ${document.getElementById("bullying").value}`, 10, 330);
+    doc.text(`School Transport Safety: ${document.getElementById("school-transport").value}`, 10, 340);
+    doc.text("6. Career & Future Goals", 10, 350);
+    doc.text(`Future Goals: ${document.getElementById("future-goal").value}`, 10, 360);
+    doc.text(`Need for Career Guidance: ${document.getElementById("career-guidance").value}`, 10, 370);
+    doc.text(`Competitive Exam Preparation: ${document.getElementById("competitive-exams").value}`, 10, 380);
+    <button onclick="generatePDF()">Generate PDF</button>
         <button onclick="sendEmail()">Send to Director</button>
     </div>
 
