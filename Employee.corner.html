@@ -7,14 +7,41 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
+
     <div class="login-container" id="login-section">
         <h2>Employee Login</h2>
-        <input type="text" id="employee-id" placeholder="Enter Employee ID">
-        <input type="password" id="password" placeholder="Enter Password">
+        <input type="text" id="employee-id" placeholder="Enter Employee ID"><br><br>
+        <input type="password" id="password" placeholder="Enter Password"><br><br>
         <button onclick="login()">Login</button>
         <p id="login-error" style="color: red;"></p>
     </div>
 
+    <div class="assessment-form" id="assessment-section" style="display: none;">
+        <h2>Welcome to Employee Panel</h2>
+        <p>You have successfully logged in!</p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        function login() {
+            const employeeID = document.getElementById("employee-id").value.trim();
+            const password = document.getElementById("password").value.trim();
+            
+            // 🔹 Add multiple employees here
+            const validUsers = {
+                "TMG0001": "12345",
+                "TMG0002": "12345"
+            };
+
+            if (validUsers[employeeID] && validUsers[employeeID] === password) {
+                document.getElementById("login-section").style.display = "none";
+                document.getElementById("assessment-section").style.display = "block";
+            } else {
+                document.getElementById("login-error").innerText = "❌ Invalid Employee ID or Password!";
+            }
+        }
+
+        function logout() 
     <div class="assessment-form" id="assessment-section" style="display: none;">
         <img src="logo.png" id="logo-img" style="display:none;"> 
         <h2>Student Assessment Form</h2>
