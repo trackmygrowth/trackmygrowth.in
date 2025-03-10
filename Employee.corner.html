@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Generator with New Page</title>
+    <title>Employee Login - TrackMyGrowth</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-    <h2>Student Assessment Form</h2>
+    <img src="logo.png" id="logo-img" style="display:none;"> <!-- Hidden logo -->
 
-    <label>Student Name:</label> <input type="text" id="student-name"><br>
-    <label>Student Code:</label> <input type="text" id="student-code"><br>
-    <label>Student DOB:</label> <input type="date" id="student-dob"><br>
+    <div class="login-container" id="login-section">
+        <h2>Employee Login</h2>
+        <input type="text" id="employee-id" placeholder="Enter Employee ID">
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="login()">Login</button>
+        <p id="login-error" style="color: red;"></p>
+    </div>
+
+<div class="assessment-form" id="assessment-section" style="display: none;">
+        <h2>Student Assessment Form</h2>
+
+        <label>Student Name:</label> <input type="text" id="student-name"><br>
+        <label>Student Code:</label> <input type="text" id="student-code"><br>
+        <label>Student DOB:</label> <input type="date" id="student-dob"><br>
 
     <h3>1. Physical Health</h3>
     <label>Neatness:</label> <input type="number" id="neatness" min="1" max="100"><br>
