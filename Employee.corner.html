@@ -62,28 +62,13 @@
         <label>Future Goals:</label> <input type="text" id="future-goal"><br>
         <label>Need for Career Guidance:</label> <input type="text" id="career-guidance"><br>
         <label>Competitive Exam Preparation:</label> <input type="text" id="competitive-exams"><br>
-
-        <button onclick="generatePDF()">Print PDF</button>
-        <button onclick="addNewPage()">Add New Page</button>
-    </div>
+<button onclick="generatePDF()">Generate PDF</button>
 
     <script>
-        function login() {
-            const employeeID = document.getElementById("employee-id").value.trim();
-            const password = document.getElementById("password").value.trim();
-
-            if (employeeID === "TMG0001" && password === "12345") {
-                document.getElementById("login-section").style.display = "none";
-                document.getElementById("assessment-section").style.display = "block";
-            } else {
-                document.getElementById("login-error").innerText = "Invalid Employee ID or Password!";
-            }
-        }
-
-        const { jsPDF } = window.jspdf;
-        let doc = new jsPDF();
-
-        function generatePDF() {
+        async function generatePDF() 
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+        
             let studentName = document.getElementById("student-name").value || "N/A";
             let studentCode = document.getElementById("student-code").value || "N/A";
             let studentDOB = document.getElementById("student-dob").value || "N/A";
@@ -125,9 +110,8 @@ let futureGoal = document.getElementById("future-goal").value;
 let careerGuidance = document.getElementById("career-guidance").value;
 let competitiveExams = document.getElementById("competitive-exams").value;
 
-            let fileName = `${studentName}_${studentCode}.pdf`;
-
-            let logo = document.getElementById("logo-img");
+           let date = new Date().toISOString().split('T')[0];
+            let fileName = `${studentName}_${studentCode}_${date}.pdf`;
 
             doc.addImage(logo, "PNG", 10, 10, 40, 20);
             doc.text("Student Assessment Report", 60, 20);
@@ -154,6 +138,23 @@ let competitiveExams = document.getElementById("competitive-exams").value;
 
             doc.save(fileName);
        
+            // PDF-LIB का इस्तेमाल करके पासवर्ड प्रोटेक्शन ऐड करें
+            const pdfDoc = await PDFLib.PDFDocument.load(await pdfBlob.arrayBuffer());
+            pdfDoc.setPassword(studentCode); // स्टूडेंट कोड से पासवर्ड सेट करें
+            const encryptedPdf = await pdfDoc.save();
+
+            // डाउनलोड करें
+            let blob = new Blob([encryptedPdf], { type: "application/pdf" });
+            let link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = fileName;
+            link.click();
+        }
+    </script>
+
+</body>
+</html>
+
     </script>
 </body>
 </html>
