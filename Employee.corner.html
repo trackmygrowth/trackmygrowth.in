@@ -3,185 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Login - TrackMyGrowth</title>
+    <title>Employee Corner - TrackMyGrowth</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.16.0/pdf-lib.min.js"></script>
 </head>
 <body>
-
-    <div class="login-container" id="login-section">
-        <h2>Employee Login</h2>
-        <input type="text" id="employee-id" placeholder="Enter Employee ID"><br><br>
-        <input type="password" id="password" placeholder="Enter Password"><br><br>
-        <button onclick="login()">Login</button>
-        <p id="login-error" style="color: red;"></p>
+    <h2>Employee Login</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+    <button onclick="login()">Login</button>
+    <button onclick="logout()">Logout</button>
+    <div id="assessmentForm" style="display:none;">
+        <h2>Student Assessment</h2>
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" required>
+        <label for="studentCode">Student Code:</label>
+        <input type="text" id="studentCode" required>
+        <label for="date">Date:</label>
+        <input type="date" id="date" required>
+        <button onclick="generatePDF()">Generate PDF</button>
+        <button onclick="sendToDirector()">Send to Director</button>
     </div>
-
-    <div class="assessment-form" id="assessment-section" style="display: none;">
-        <h2>Welcome to Employee Panel</h2>
-        <p>You have successfully logged in!</p>
-        <button onclick="logout()">Logout</button>
-    </div>
-
+    
     <script>
         function login() {
-            const employeeID = document.getElementById("employee-id").value.trim();
-            const password = document.getElementById("password").value.trim();
-            
-            // 🔹 Add multiple employees here
-            const validUsers = {
-                "TMG0001": "12345",
-                "TMG0002": "12345"
-            };
-
-            if (validUsers[employeeID] && validUsers[employeeID] === password) {
-                document.getElementById("login-section").style.display = "none";
-                document.getElementById("assessment-section").style.display = "block";
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            if (username === "TMG0001" && password === "12345") {
+                alert("Login successful!");
+                document.getElementById("assessmentForm").style.display = "block";
             } else {
-                document.getElementById("login-error").innerText = "❌ Invalid Employee ID or Password!";
+                alert("Invalid login credentials.");
             }
         }
 
-        function logout() 
-    <div class="assessment-form" id="assessment-section" style="display: none;">
-        <img src="logo.png" id="logo-img" style="display:none;"> 
-        <h2>Student Assessment Form</h2>
+        function logout() {
+            alert("Logged out successfully.");
+            document.getElementById("assessmentForm").style.display = "none";
+        }
 
-        <label>Student Name:</label> <input type="text" id="student-name"><br>
-        <label>Student Code:</label> <input type="text" id="student-code"><br>
-        <label>Student DOB:</label> <input type="date" id="student-dob"><br>
-
-        <h3>1. Physical Health</h3>
-        <label>Neatness:</label> <input type="number" id="neatness"><br>
-        <label>Weight:</label> <input type="number" id="weight"><br>
-        <label>Water Intake:</label> <input type="text" id="water-intake"><br>
-        <label>Allergies:</label> <input type="text" id="allergies"><br>
-        <label>Sleep Hours:</label> <input type="text" id="sleep-hours"><br>
-        <label>Physical Activities:</label> <input type="text" id="physical-activities"><br>
-
-        <h3>2. Mental Health</h3>
-        <label>Stress Level:</label> <input type="text" id="stress"><br>
-        <label>Comfort in Sharing Problems:</label> <input type="text" id="sharing-problems"><br>
-        <label>Social Difficulties:</label> <input type="text" id="social-difficulties"><br>
-
-        <h3>3. Education & Learning</h3>
-        <label>Difficult Subject:</label> <input type="text" id="difficult-subject"><br>
-        <label>Preferred Teaching Method:</label> <input type="text" id="teaching-method"><br>
-        <label>Reading (Hindi):</label> <input type="number" id="reading-hindi"><br>
-        <label>Reading (English):</label> <input type="number" id="reading-english"><br>
-        <label>Handwriting (English):</label> <input type="number" id="handwriting-english"><br>
-        <label>Handwriting (Hindi):</label> <input type="number" id="handwriting-hindi"><br>
-        <label>Maths Test:</label> <input type="number" id="maths-test"><br>
-        <label>Overall Syllabus Knowledge:</label> <input type="number" id="overall-syllabus"><br>
-
-        <h3>4. Lifestyle & Daily Routine</h3>
-        <label>Screen Time:</label> <input type="text" id="screen-time"><br>
-        <label>Exercise/Yoga:</label> <input type="text" id="exercise"><br>
-        <label>Balanced Diet:</label> <input type="text" id="diet"><br>
-        <label>Self-Study Hours:</label> <input type="text" id="self-study-time"><br>
-
-        <h3>5. School Environment & Safety</h3>
-        <label>School Cleanliness:</label> <input type="text" id="school-cleanliness"><br>
-        <label>Safe Drinking Water:</label> <input type="text" id="school-water-air"><br>
-        <label>Bullying/Harassment:</label> <input type="text" id="bullying"><br>
-        <label>School Transport Safety:</label> <input type="text" id="school-transport"><br>
-
-        <h3>6. Career & Future Goals</h3>
-        <label>Future Goals:</label> <input type="text" id="future-goal"><br>
-        <label>Need for Career Guidance:</label> <input type="text" id="career-guidance"><br>
-        <label>Competitive Exam Preparation:</label> <input type="text" id="competitive-exams"><br>
-<button onclick="generatePDF()">Generate PDF</button>
-
-    <script>
-        async function generatePDF() 
+        function generatePDF() {
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
-        
-            let studentName = document.getElementById("student-name").value || "N/A";
-            let studentCode = document.getElementById("student-code").value || "N/A";
-            let studentDOB = document.getElementById("student-dob").value || "N/A";
-          let studentName = document.getElementById("student-name").value;
-let studentCode = document.getElementById("student-code").value;
-let studentDOB = document.getElementById("student-dob").value;
-
-let neatness = document.getElementById("neatness").value;
-let weight = document.getElementById("weight").value;
-let waterIntake = document.getElementById("water-intake").value;
-let allergies = document.getElementById("allergies").value;
-let sleepHours = document.getElementById("sleep-hours").value;
-let physicalActivities = document.getElementById("physical-activities").value;
-
-let stressLevel = document.getElementById("stress").value;
-let sharingProblems = document.getElementById("sharing-problems").value;
-let socialDifficulties = document.getElementById("social-difficulties").value;
-
-let difficultSubject = document.getElementById("difficult-subject").value;
-let teachingMethod = document.getElementById("teaching-method").value;
-let readingHindi = document.getElementById("reading-hindi").value;
-let readingEnglish = document.getElementById("reading-english").value;
-let handwritingEnglish = document.getElementById("handwriting-english").value;
-let handwritingHindi = document.getElementById("handwriting-hindi").value;
-let mathsTest = document.getElementById("maths-test").value;
-let overallSyllabus = document.getElementById("overall-syllabus").value;
-
-let screenTime = document.getElementById("screen-time").value;
-let exercise = document.getElementById("exercise").value;
-let diet = document.getElementById("diet").value;
-let selfStudyTime = document.getElementById("self-study-time").value;
-
-let schoolCleanliness = document.getElementById("school-cleanliness").value;
-let schoolWaterAir = document.getElementById("school-water-air").value;
-let bullying = document.getElementById("bullying").value;
-let schoolTransport = document.getElementById("school-transport").value;
-
-let futureGoal = document.getElementById("future-goal").value;
-let careerGuidance = document.getElementById("career-guidance").value;
-let competitiveExams = document.getElementById("competitive-exams").value;
-
-           let date = new Date().toISOString().split('T')[0];
+            let studentName = document.getElementById("studentName").value;
+            let studentCode = document.getElementById("studentCode").value;
+            let date = document.getElementById("date").value;
+            
+            doc.text("Student Assessment Report", 10, 10);
+            doc.text("Name: " + studentName, 10, 20);
+            doc.text("Student Code: " + studentCode, 10, 30);
+            doc.text("Date: " + date, 10, 40);
+            
             let fileName = `${studentName}_${studentCode}_${date}.pdf`;
-
-            doc.addImage(logo, "PNG", 10, 10, 40, 20);
-            doc.text("Student Assessment Report", 60, 20);
-
-            let y = 40;
-            let sections = document.querySelectorAll("h3, label, input");
-
-            sections.forEach(element => {
-                if (element.tagName === "H3") {
-                    doc.setFontSize(14);
-                    doc.text(element.innerText, 10, y);
-                    y += 10;
-                } else if (element.tagName === "LABEL") {
-                    doc.setFontSize(12);
-                    doc.text(element.innerText + " " + (element.nextElementSibling.value || "N/A"), 10, y);
-                    y += 8;
-                }
-
-                if (y > 270) {
-                    doc.addPage();
-                    y = 20;
-                }
-            });
-
             doc.save(fileName);
-       
-            // PDF-LIB का इस्तेमाल करके पासवर्ड प्रोटेक्शन ऐड करें
-            const pdfDoc = await PDFLib.PDFDocument.load(await pdfBlob.arrayBuffer());
-            pdfDoc.setPassword(studentCode); // स्टूडेंट कोड से पासवर्ड सेट करें
-            const encryptedPdf = await pdfDoc.save();
-
-            // डाउनलोड करें
-            let blob = new Blob([encryptedPdf], { type: "application/pdf" });
-            let link = document.createElement("a");
-            link.href = URL.createObjectURL(blob);
-            link.download = fileName;
-            link.click();
         }
-    </script>
 
-</body>
-</html>
-
+        function sendToDirector() {
+            alert("Report will be sent to info@trackmygrowth.in");
+        }
     </script>
 </body>
 </html>
