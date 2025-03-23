@@ -125,17 +125,75 @@
     <a onclick="showSection('join')">Join Us</a>
     <a onclick="showSection('gallery')">Gallery</a> <!-- New Tab Added -->
     <a onclick="showSection('contact')">Contact Us</a>
+    <a onclick="showSection('Report sample')">Report Sample</a>
     <a onclick="showSection('Employee Corner')">Employee Corner</a>
 </nav>
 <a href="https://wa.me/919795776786" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30">
     Chat with us on WhatsApp
-</a>
+    </a>
 
+<!-- Report sample-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { width: 80%; margin: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        input, textarea { width: 100%; padding: 5px; }
+        .submit-btn { margin-top: 10px; padding: 10px 15px; background-color: green; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Weekly Report</h2>
+    <form>
+        <label>Student Name: <input type="text" name="student_name" value="XYZ"></label><br>
+        <label>Age: <input type="text" name="age" value="5 Yrs"></label><br>
+        <label>Parent Name: <input type="text" name="parent_name" value="A.C"></label><br>
+        <label>Class: <input type="text" name="class" value="1st"></label><br>
+        <label>School: <input type="text" name="school" value="ABC Public School"></label><br>
+
+        <h3>1. School and Syllabus Analysis</h3>
+        <table>
+            <tr><th>Subject</th><th>Obtain</th><th>Total</th><th>Suggestion / Remark</th></tr>
+            <tr><td>Syllabus Knowledge</td><td><input type="text" name="syllabus_knowledge" value="97"></td><td>100</td><td><textarea>The things that already remembered also need to be revised regularly</textarea></td></tr>
+            <tr><td>Main Subjects</td><td><input type="text" name="main_subjects" value="77"></td><td>100</td><td><textarea>Good Improvement</textarea></td></tr>
+            <tr><td>Weak Points</td><td><input type="text" name="weak_points" value="75"></td><td>100</td><td><textarea>Poor Improvement</textarea></td></tr>
+        </table>
+
+        <h3>2. Hygiene Analysis</h3>
+        <table>
+            <tr><th>Aspect</th><th>Score</th><th>Total</th><th>Remarks</th></tr>
+            <tr><td>Allergy Effects</td><td><input type="text" name="allergy_effects" value="Yes"></td><td>10</td><td><textarea>Consult an allergy specialist</textarea></td></tr>
+            <tr><td>Physical Activity</td><td><input type="text" name="physical_activity" value="6"></td><td>10</td><td><textarea>Play outdoors at least 30 min</textarea></td></tr>
+        </table>
+
+        <h3>Rank in City</h3>
+        <label>Total Students in City: <input type="text" name="city_students" value="400"></label><br>
+        <label>ABC Rank: <input type="text" name="abc_rank" value="27"></label><br>
+
+        <h3>All India Rank (AIR)</h3>
+        <label>Total Students in India: <input type="text" name="india_students" value="1200"></label><br>
+        <label>ABC Rank: <input type="text" name="abc_air_rank" value="187"></label><br>
+
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
 <!-- Contact Us Section -->
 <div class="container">
     <section id="contact" class="content-section">
         <h2>Contact Us</h2>
+        <p><strong>Director:</strong>Sheikh Mohd Daood</p>
         <p><strong>Email:</strong> info@trackmygrowth.in</p>
         <p><strong>Phone:</strong> +91 9795776786</p>
         <h3>Send Us a Message</h3>
