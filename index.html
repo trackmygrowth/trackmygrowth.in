@@ -123,11 +123,13 @@
     <a onclick="showSection('services')">Services</a>
     <a onclick="showSection('faq')">FAQs</a>
     <a onclick="showSection('join')">Join Us</a>
-    <a onclick="showSection('gallery')">Gallery</a> <!-- New Tab Added -->
+    <a onclick="showSection('gallery')">Gallery</a>
     <a onclick="showSection('contact')">Contact Us</a>
-    <a onclick="showSection('Employee Corner')">Employee Corner</a>
-    <a onclick="showSection('Report sample')">Report sample</a>
+    <a onclick="showSection('employee')">Employee Corner</a>
+    <a onclick="showSection('report')">Report Sample</a>
 </nav>
+
+<!-- WhatsApp Chat -->
 <a href="https://wa.me/919795776786" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30">
     Chat with us on WhatsApp
@@ -137,31 +139,30 @@
 <div class="container">
     <section id="contact" class="content-section">
         <h2>Contact Us</h2>
-        <p><strong>Sheikh Mohd Daood</p>
-        <p><strong>Director</p>
+        <p><strong>Sheikh Mohd Daood</strong></p>
+        <p><strong>Director</strong></p>
         <p><strong>Email:</strong> info@trackmygrowth.in</p>
         <p><strong>Phone:</strong> +91 9795776786</p>
+
         <h3>Send Us a Message</h3>
-        
         <form action="mailto:info@trackmygrowth.in" method="post" enctype="text/plain">
-            <label for="name">Your Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
+            <label>Your Name:</label><br>
+            <input type="text" name="name" required><br><br>
 
-            <label for="email">Your Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
+            <label>Your Email:</label><br>
+            <input type="email" name="email" required><br><br>
 
-            <label for="message">Your Message:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+            <label>Your Message:</label><br>
+            <textarea name="message" rows="4" required></textarea><br><br>
 
             <input type="submit" value="Send Message">
         </form>
     </section>
 </div>
 
+<!-- Report Sample Section -->
 <div class="container">
-
-
-    <section id="Report sample" class="Report sample-section">
+    <section id="report" class="content-section">
         <h2>Student Report Sample</h2>
 
         <label>Student Name: <input type="text" name="student_name" value="XYZ"></label><br>
@@ -193,48 +194,29 @@
             </tr>
         </table>
 
-        <h3>2. Hygiene Analysis</h3>
-        <table border="1">
-            <tr><th>Aspect</th><th>Score</th><th>Total</th><th>Remarks</th></tr>
-            <tr>
-                <td>Allergy Effects</td>
-                <td><input type="text" name="allergy_effects" value="Yes"></td>
-                <td>10</td>
-                <td><textarea>Consult an allergy specialist</textarea></td>
-            </tr>
-            <tr>
-                <td>Physical Activity</td>
-                <td><input type="text" name="physical_activity" value="6"></td>
-                <td>10</td>
-                <td><textarea>Play outdoors at least 30 min</textarea></td>
-            </tr>
-        </table>
-
-        <h3>Rank in City</h3>
-        <label>Total Students in City: <input type="text" name="city_students" value="400"></label><br>
-        <label>ABC Rank: <input type="text" name="abc_rank" value="27"></label><br>
-
-        <h3>All India Rank (AIR)</h3>
-        <label>Total Students in India: <input type="text" name="india_students" value="1200"></label><br>
-        <label>ABC Rank: <input type="text" name="abc_air_rank" value="187"></label><br>
-
         <button type="submit" class="submit-btn">Submit</button>
     </section>
 </div>
 
+<!-- JavaScript for Section Toggle -->
 <script>
-    function toggleReport() {
-        var reportSection = document.getElementById("reportSample");
-        if (reportSection.style.display === "none" || reportSection.style.display === "") {
-            reportSection.style.display = "block";
-        } else {
-            reportSection.style.display = "none";
+    function showSection(sectionId) {
+        // Sabhi sections ko hide karna
+        var sections = document.getElementsByClassName("content-section");
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].style.display = "none";
         }
+
+        // Sirf selected section ko show karna
+        document.getElementById(sectionId).style.display = "block";
     }
 </script>
 
 </body>
 </html>
+    
+<nav>
+    <a 
 
 <!-- Gallery Section -->
 <div class="container">
