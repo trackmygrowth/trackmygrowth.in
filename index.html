@@ -153,18 +153,18 @@
             <label for="message">Your Message:</label><br>
             <textarea id="message" name="message" rows="4" required></textarea><br><br>
 
-            <input type="submit" value="Send Message">
+            <input type="submit" vaue="Send Message">
         </form>
     </section>
 </div>
 
-    <!-- Report sample -->
+
 <div class="container">
-    <section id="Report sample" class="Report sample-section">
+    <button onclick="toggleReport()">Report Sample</button>
+
+    <section id="reportSample" class="report-sample-section">
         <h2>Student Report Sample</h2>
 
-    <title>Weekly Report</title>
-    
         <label>Student Name: <input type="text" name="student_name" value="XYZ"></label><br>
         <label>Age: <input type="text" name="age" value="5 Yrs"></label><br>
         <label>Parent Name: <input type="text" name="parent_name" value="A.C"></label><br>
@@ -172,18 +172,43 @@
         <label>School: <input type="text" name="school" value="ABC Public School"></label><br>
 
         <h3>1. School and Syllabus Analysis</h3>
-        <table>
+        <table border="1">
             <tr><th>Subject</th><th>Obtain</th><th>Total</th><th>Suggestion / Remark</th></tr>
-            <tr><td>Syllabus Knowledge</td><td><input type="text" name="syllabus_knowledge" value="97"></td><td>100</td><td><textarea>The things that already remembered also need to be revised regularly</textarea></td></tr>
-            <tr><td>Main Subjects</td><td><input type="text" name="main_subjects" value="77"></td><td>100</td><td><textarea>Good Improvement</textarea></td></tr>
-            <tr><td>Weak Points</td><td><input type="text" name="weak_points" value="75"></td><td>100</td><td><textarea>Poor Improvement</textarea></td></tr>
+            <tr>
+                <td>Syllabus Knowledge</td>
+                <td><input type="text" name="syllabus_knowledge" value="97"></td>
+                <td>100</td>
+                <td><textarea>The things that already remembered also need to be revised regularly</textarea></td>
+            </tr>
+            <tr>
+                <td>Main Subjects</td>
+                <td><input type="text" name="main_subjects" value="77"></td>
+                <td>100</td>
+                <td><textarea>Good Improvement</textarea></td>
+            </tr>
+            <tr>
+                <td>Weak Points</td>
+                <td><input type="text" name="weak_points" value="75"></td>
+                <td>100</td>
+                <td><textarea>Poor Improvement</textarea></td>
+            </tr>
         </table>
 
         <h3>2. Hygiene Analysis</h3>
-        <table>
+        <table border="1">
             <tr><th>Aspect</th><th>Score</th><th>Total</th><th>Remarks</th></tr>
-            <tr><td>Allergy Effects</td><td><input type="text" name="allergy_effects" value="Yes"></td><td>10</td><td><textarea>Consult an allergy specialist</textarea></td></tr>
-            <tr><td>Physical Activity</td><td><input type="text" name="physical_activity" value="6"></td><td>10</td><td><textarea>Play outdoors at least 30 min</textarea></td></tr>
+            <tr>
+                <td>Allergy Effects</td>
+                <td><input type="text" name="allergy_effects" value="Yes"></td>
+                <td>10</td>
+                <td><textarea>Consult an allergy specialist</textarea></td>
+            </tr>
+            <tr>
+                <td>Physical Activity</td>
+                <td><input type="text" name="physical_activity" value="6"></td>
+                <td>10</td>
+                <td><textarea>Play outdoors at least 30 min</textarea></td>
+            </tr>
         </table>
 
         <h3>Rank in City</h3>
@@ -194,15 +219,25 @@
         <label>Total Students in India: <input type="text" name="india_students" value="1200"></label><br>
         <label>ABC Rank: <input type="text" name="abc_air_rank" value="187"></label><br>
 
-        <button type="submit" class="submit-btn">Submit</button
-</form>
+        <button type="submit" class="submit-btn">Submit</button>
     </section>
 </div>
-                });
+
+<script>
+    function toggleReport() {
+        var reportSection = document.getElementById("reportSample");
+        if (reportSection.style.display === "none" || reportSection.style.display === "") {
+            reportSection.style.display = "block";
+        } else {
+            reportSection.style.display = "none";
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>
+    
+
 <!-- Gallery Section -->
 <div class="container">
     <section id="gallery" class="content-section">
