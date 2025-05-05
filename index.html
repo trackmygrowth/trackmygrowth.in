@@ -139,10 +139,66 @@
 <div class="container">
     <section id="contact" class="content-section">
         <h2>Contact Us</h2>
-        <p><strong>Sheikh Mohd Daood</strong></p>
-        <p><strong>Director</strong></p>
-        <p><strong>Email:</strong> info@trackmygrowth.in</p>
-        <p><strong>Phone:</strong> +91 9795776786</p>
+        <address>
+            <p><strong class="contact-name">Alisha Hameed</strong><br><span class="contact-title">Functional Head</span></p>
+            <p><strong class="contact-name">Sheikh Mohd Daood</strong><br><span class="contact-title">Director</span></p>
+            <p><strong>Email:</strong> <a href="mailto:info@trackmygrowth.in">info@trackmygrowth.in</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+919795776786">+91 9795776786</a></p>
+        </address>
+    </section>
+</div>
+
+<style>
+    /* Styling for Contact Us section */
+    #contact {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+    }
+
+    #contact h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    #contact address {
+        font-style: normal;
+        line-height: 1.6;
+    }
+
+    #contact a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    #contact a:hover {
+        text-decoration: underline;
+    }
+
+    #contact p {
+        margin-bottom: 10px;
+    }
+
+    /* Dark blue color for name and title */
+    .contact-name {
+        color: #003366; /* Dark Blue */
+        font-weight: bold;
+    }
+
+    .contact-title {
+        color: #003366; /* Dark Blue */
+        font-style: italic;
+    }
+
+    #contact strong {
+        display: inline-block;
+        width: 120px;
+        font-weight: bold;
+    }
+</style>
+
 
         <h3>Send Us a Message</h3>
         <form action="mailto:info@trackmygrowth.in" method="post" enctype="text/plain">
@@ -235,17 +291,38 @@
         <h2>Image Gallery</h2>
         <div class="gallery">
             <figure>
-                <img src="https://raw.github.com/trackmygrowth/trackmygrowth.in/blob/main/images/collage.jpg" alt="collage.jpg">
+                <img src="https://raw.githubusercontent.com/trackmygrowth/trackmygrowth.in/main/images/collage.jpg" alt="Inspection collage">
                 <figcaption>Inspection</figcaption>
             </figure>
 
             <figure>
-                <img src="images/Student Sample Report.jpg" alt="Student Sample Report.jpg">
-                <figcaption>Student Sample Report.jpg</figcaption>
+                <img src="images/Student Sample Report.jpg" alt="Student Sample Report">
+                <figcaption>Student Sample Report</figcaption>
             </figure>
         </div>
     </section>
 </div>
+
+<style>
+    /* Gallery section styling */
+    .gallery {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .gallery figure {
+        max-width: 300px;  /* Adjust the max width as needed */
+        margin: 0;
+        text-align: center;
+    }
+
+    .gallery img {
+        width: 100%;  /* Ensures images are responsive */
+        height: auto;  /* Maintains aspect ratio */
+    }
+</style>
 
 
 
