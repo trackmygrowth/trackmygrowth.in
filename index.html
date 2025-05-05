@@ -69,7 +69,7 @@
         }
         .faq-question {
             background: #4CAF50;
-            color: Black;
+            color: white;
             padding: 15px;
             border: none;
             width: 100%;
@@ -91,7 +91,7 @@
             padding: 15px;
             margin: 10px;
             background: #007BFF;
-            color: Black;
+            color: white;
             text-decoration: none;
             font-size: 18px;
             border-radius: 5px;
@@ -102,10 +102,10 @@
         }
         footer {
             background: #333;
-            color: Black;
+            color: white;
             text-align: center;
             padding: 10px;
-            margin-top: 15px;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -139,22 +139,10 @@
 <div class="container">
     <section id="contact" class="content-section">
         <h2>Contact Us</h2>
-       <head>
-  <style>
-    .highlight {
-      color: #003366; /* Dark Blue */
-    }
-
-    .normal-text {
-      color: #000000; /*Black */
-    }
         <p><strong>Sheikh Mohd Daood</strong></p>
         <p><strong>Director</strong></p>
         <p><strong>Email:</strong> info@trackmygrowth.in</p>
         <p><strong>Phone:</strong> +91 9795776786</p>
-         <p><strong>Alisha Hameed</strong></p>
-        <p><strong>Functionality Head</strong></p>
-        
 
         <h3>Send Us a Message</h3>
         <form action="mailto:info@trackmygrowth.in" method="post" enctype="text/plain">
@@ -247,15 +235,14 @@
         <h2>Image Gallery</h2>
         <div class="gallery">
             <figure>
-                <img src="https://github.com/trackmygrowth/trackmygrowth.in/tree/main/images">
-                <figcaption>collage.jpg</figcaption>
+                <img src="https://raw.github.com/trackmygrowth/trackmygrowth.in/blob/main/images/collage.jpg" alt="collage.jpg">
+                <figcaption>Inspection</figcaption>
             </figure>
 
             <figure>
-                <img src="images/Student Sample Report" alt="Student Sample Report">
+                <img src="images/Student Sample Report.jpg" alt="Student Sample Report.jpg">
                 <figcaption>Student Sample Report.jpg</figcaption>
             </figure>
-        
         </div>
     </section>
 </div>
@@ -474,7 +461,7 @@ Don’t just keep up with the times—set new standards of success with TrackMyG
             let empId = document.getElementById("employee-id").value;
             let password = document.getElementById("password").value;
             
-            if (empId === "TMG0001" && password === "12345") {
+            if (empId === "TMG0001" & password === "12345") {
                 document.getElementById("login-section").classList.add("hidden");
                 document.getElementById("assessment-form").classList.remove("hidden");
             } else {
@@ -772,7 +759,7 @@ Join us on this journey of growth and excellence. With TrackMyGrowth, the future
             if (content.classList.contains('hidden')) {
                 content.classList.remove('hidden');
             } else {
-                content.classList.add('hidden');
+                content.classList.add('show');
             }
         }
     </script>
@@ -826,19 +813,19 @@ Join us on this journey of growth and excellence. With TrackMyGrowth, the future
                 <div class="faq-answer">
                     <p>TrackMyGrowth helps schools improve their quality, student performance, and reputation through data-driven insights, expert support, and school-wide evaluations. Schools benefit in the following ways:
 
-<p>✔ Full School Inspection Reports – We assess infrastructure, cleanliness, air & water quality, and classroom conditions to ensure a safe learning environment.<p><p>
+<p>✔ Full School Inspection Reports – We assess infrastructure, cleanliness, air & water quality, and classroom conditions to ensure a safe learning environment.<p>
 
 <p>✔ City-Wise School Rankings – We provide confidential performance reports comparing schools with others in the city, helping them identify areas for improvement.<p>
 
 <p>✔ Faculty Development Programs – We offer teacher training, expert subject guidance, and extra classes during exams to enhance teaching quality.<p>
 
-<p><p><p>✔ Student Performance Tracking – Schools receive detailed reports on student progress, helping teachers focus on subject-wise improvement.<p><p>
+<p><p><p>✔ Student Performance Tracking – Schools receive detailed reports on student progress, helping teachers focus on subject-wise improvement.<p>
 
-<p>✔ Admission & Reputation Boost – Schools can showcase their TrackMyGrowth accreditation to attract more students and improve their rankings.<p><p><p>
+<p>✔ Admission & Reputation Boost – Schools can showcase their TrackMyGrowth accreditation to attract more students and improve their rankings.<p>
 
-<p><p><p><p>✔ Expert-Led Extra Classes – We provide specialized teachers for competitive exams, skill-building, and project guidance.<p><p>
+<p>✔ Expert-Led Extra Classes – We provide specialized teachers for competitive exams, skill-building, and project guidance.<p>
 
-<p>✔ Better Hiring & Teacher Support – Schools get assistance in hiring qualified teachers, improving overall faculty strength.<p><p>
+<p>✔ Better Hiring & Teacher Support – Schools get assistance in hiring qualified teachers, improving overall faculty strength.<p>
 
 <p>✔ Monthly Monitoring & Feedback – Schools receive regular reports on infrastructure, student behavior, and academic progress to maintain high educational standards.</p>
                 </div>
@@ -872,8 +859,8 @@ Join us on this journey of growth and excellence. With TrackMyGrowth, the future
             });
         });
     </script>
-<footer style="width: 10%; background-color: #f8f8f8; text-align: center; padding: 15px 0; font-family: Arial, sans-serif; font-size: 14px; color: #333;">
-    <p>&copy; 2025 TrackMyGrowth. All Rights Reserved.</p>
+<footer>
+        <p>&copy; 2025 TrackMyGrowth. All Rights Reserved.</p>
 </footer>
 </body>
 </html>
