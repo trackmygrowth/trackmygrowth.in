@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<!-- saved from url=(0025)https://trackmygrowth.in/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrackMyGrowth</title>
     <style>
@@ -24,7 +23,7 @@
         nav {
             display: flex;
             justify-content: center;
-            background: Gray;
+            background: White;
             padding: 10px;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
             position: sticky;
@@ -112,32 +111,31 @@
 <body>
 
     <div class="header-container">
-        <img src="https://raw.githubusercontent.com/trackmygrowth/trackmygrowth.in/main/Final_Logo.jpg" 
-     alt="TrackMyGrowth Logo" width="425" height="auto">
+        <img src="./55_files/Final_Logo.jpg" alt="TrackMyGrowth Logo" width="425" height="auto">
     </div>
 
   <!-- Add "Gallery" tab in the navigation -->
 <nav>
     <a onclick="location.reload()">Home</a>
-    <a onclick="showSection('about')">About</a>
-    <a onclick="showSection('services')">Services</a>
-    <a onclick="showSection('faq')">FAQs</a>
-    <a onclick="showSection('join')">Join Us</a>
-    <a onclick="showSection('gallery')">Gallery</a>
-    <a onclick="showSection('contact')">Contact Us</a>
-    <a onclick="showSection('employee')">Employee Corner</a>
-    <a onclick="showSection('report')">Report Sample</a>
+    <a onclick="showSection(&#39;about&#39;)">About</a>
+    <a onclick="showSection(&#39;services&#39;)">Services</a>
+    <a onclick="showSection(&#39;faq&#39;)">FAQs</a>
+    <a onclick="showSection(&#39;join&#39;)">Join Us</a>
+    <a onclick="showSection(&#39;gallery&#39;)">Gallery</a>
+    <a onclick="showSection(&#39;contact&#39;)">Contact Us</a>
+    <a onclick="showSection(&#39;employee&#39;)">Employee Corner</a>
+    <a onclick="showSection(&#39;report&#39;)">Report Sample</a>
 </nav>
 
 <!-- WhatsApp Chat -->
 <a href="https://wa.me/919795776786" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30">
+    <img src="./55_files/WhatsApp.svg" alt="WhatsApp" width="30">
     Chat with us on WhatsApp
 </a>
 
 <!-- Contact Us Section -->
 <div class="container">
-    <section id="contact" class="content-section">
+    <section id="contact" class="content-section" style="display: none;">
         <h2>Contact Us</h2>
         <address>
             <p><strong class="contact-name">Alisha Hameed</strong><br><span class="contact-title">Functional Head</span></p>
@@ -203,22 +201,22 @@
         <h3>Send Us a Message</h3>
         <form action="mailto:info@trackmygrowth.in" method="post" enctype="text/plain">
             <label>Your Name:</label><br>
-            <input type="text" name="name" required><br><br>
+            <input type="text" name="name" required=""><br><br>
 
             <label>Your Email:</label><br>
-            <input type="email" name="email" required><br><br>
+            <input type="email" name="email" required=""><br><br>
 
             <label>Your Message:</label><br>
-            <textarea name="message" rows="4" required></textarea><br><br>
+            <textarea name="message" rows="4" required=""></textarea><br><br>
 
             <input type="submit" value="Send Message">
         </form>
-    </section>
-</div>
+    
+
 
 <!-- Report Sample Section -->
 <div class="container">
-    <section id="report" class="content-section">
+    <section id="report" class="content-section" style="display: none;">
         <h2>Student Report Sample</h2>
 
         <label>Student Name: <input type="text" name="student_name" value="XYZ"></label><br>
@@ -229,19 +227,19 @@
 
         <h3>1. School and Syllabus Analysis</h3>
         <table border="1">
-            <tr><th>Subject</th><th>Obtain</th><th>Total</th><th>Suggestion / Remark</th></tr>
+            <tbody><tr><th>Subject</th><th>Obtain</th><th>Total</th><th>Suggestion / Remark</th></tr>
             <tr>
                 <td>Syllabus Knowledge</td>
                 <td><input type="text" name="syllabus_knowledge" value="97"></td>
                 <td>100</td>
                 <td><textarea>The things that already remembered also need to be revised regularly</textarea></td>
             </tr>
-            <td>Friends circle and social Impact</td>
+            <tr><td>Friends circle and social Impact</td>
                 <td><input type="text" name="syllabus_knowledge" value="97"></td>
                 <td>100</td>
                 <td><textarea> Normal</textarea></td>
         </tr>
-            <td>
+            <tr><td>
             </td>
                 <td><input type="text" name="syllabus_Past Three weeks History " value="97"></td>
                 <td>100</td>
@@ -259,7 +257,7 @@
                 <td>100</td>
                 <td><textarea>Poor Improvement</textarea></td>
             </tr>
-        </table>
+        </tbody></table>
 
         <button type="submit" class="submit-btn">Submit</button>
     </section>
@@ -279,24 +277,22 @@
     }
 </script>
 
-</body>
-</html>
+
+
     
 <nav>
-    <a 
-
-<!-- Gallery Section -->
+    <a <!--="" gallery="" section="" --="">
 <div class="container">
-    <section id="gallery" class="content-section">
+    <section id="gallery" class="content-section" style="display: none;">
         <h2>Image Gallery</h2>
         <div class="gallery">
             <figure>
-                <img src="https://raw.githubusercontent.com/trackmygrowth/trackmygrowth.in/main/images/collage.jpg" alt="Inspection collage">
+                <img src="./55_files/collage.jpg" alt="Inspection collage">
                 <figcaption>Inspection</figcaption>
             </figure>
 
             <figure>
-                <img src="images/Student Sample Report.jpg" alt="Student Sample Report">
+                <img src="./55_files/Student Sample Report.jpg" alt="Student Sample Report">
                 <figcaption>Student Sample Report</figcaption>
             </figure>
         </div>
@@ -327,7 +323,7 @@
 
 
 
-    <div id="welcome-content" class="container">
+    <div id="welcome-content" class="container" style="display: none;">
         
         <h1 style="background: linear-gradient(90deg, #4CAF50, #007BFF, #FFA500);
             -webkit-background-clip: text;
@@ -336,27 +332,27 @@
         Transforming Education, Empowering Growth – Unlocking Every Child’s True Potential
 </h1>
 
-<p>At TrackMyGrowth, we understand that every child is unique—with their own strengths, challenges, and dreams—and every school plays a vital role in nurturing these young minds. But in today’s fast-paced world, it can be challenging for parents and schools to stay on top of a child’s education, behavior, and overall development.<p>
-<p>That’s where we come in!<p>
-<p>We offer a powerful, easy-to-use platform designed to support both schools and parents in tracking academic progress, social behavior, and emotional well-being—all in real-time. Our mission is to empower schools to reach new heights of excellence while helping parents stay connected and involved in their child’s journey to success.<p><p>
-<p>Whether you’re a school leader aiming to elevate your institution or a parent striving to help your child thrive, our expert guidance, innovative tools, and personalized support will help you achieve your goals.<p>
-<p>🌟 Why Choose TrackMyGrowth?<p>
-<p>•For schools, we offer city-wise rankings, faculty development programs, infrastructure assessments, and expert-led exam support—helping you set the standard for educational excellence. Additionally, we provide a comprehensive school inspection test covering all key aspects, including infrastructure , cleanliness, air quality, water quality, safety measures, Class conditions, transport facilities, and overall hygiene. This ensures a healthy and high-quality learning environment for students and staff.<p>
-<p>•For parents, we provide academic tracking, personalized counseling, behavior analysis, and health monitoring ensuring your child grows into the best version of themselves.<p>
-<p>Let’s build a future where every school leads and every child shines!
-Don’t just keep up with the times—set new standards of success with TrackMyGrowth.<p>
-<p>Let’s grow, inspire, and lead—together!<p>
-   <p>Warm regards,<p>
-<p>The TrackMyGrowth Team<p>
+<p>At TrackMyGrowth, we understand that every child is unique—with their own strengths, challenges, and dreams—and every school plays a vital role in nurturing these young minds. But in today’s fast-paced world, it can be challenging for parents and schools to stay on top of a child’s education, behavior, and overall development.</p><p>
+</p><p>That’s where we come in!</p><p>
+</p><p>We offer a powerful, easy-to-use platform designed to support both schools and parents in tracking academic progress, social behavior, and emotional well-being—all in real-time. Our mission is to empower schools to reach new heights of excellence while helping parents stay connected and involved in their child’s journey to success.</p><p></p><p>
+</p><p>Whether you’re a school leader aiming to elevate your institution or a parent striving to help your child thrive, our expert guidance, innovative tools, and personalized support will help you achieve your goals.</p><p>
+</p><p>🌟 Why Choose TrackMyGrowth?</p><p>
+</p><p>•For schools, we offer city-wise rankings, faculty development programs, infrastructure assessments, and expert-led exam support—helping you set the standard for educational excellence. Additionally, we provide a comprehensive school inspection test covering all key aspects, including infrastructure , cleanliness, air quality, water quality, safety measures, Class conditions, transport facilities, and overall hygiene. This ensures a healthy and high-quality learning environment for students and staff.</p><p>
+</p><p>•For parents, we provide academic tracking, personalized counseling, behavior analysis, and health monitoring ensuring your child grows into the best version of themselves.</p><p>
+</p><p>Let’s build a future where every school leads and every child shines!
+Don’t just keep up with the times—set new standards of success with TrackMyGrowth.</p><p>
+</p><p>Let’s grow, inspire, and lead—together!</p><p>
+   </p><p>Warm regards,</p><p>
+</p><p>The TrackMyGrowth Team</p><p>
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+
+
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Corner - TrackMyGrowth</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="./55_files/jspdf.umd.min.js.download"></script>
+    <script src="./55_files/chart.js.download"></script>
+    <script src="./55_files/email.min.js.download"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -398,9 +394,9 @@ Don’t just keep up with the times—set new standards of success with TrackMyG
     <section id="Employee Corner" class="content-section">
         <h2>Employee Corner</h2>
     </style>
-</head>
-<body>
-    <div class="container" id="login-section">
+
+
+    </p><div class="container" id="login-section">
         <h2>Employee Login</h2>
         <input type="text" id="employee-id" placeholder="Enter Employee ID (e.g., TMG0001)">
         <input type="password" id="password" placeholder="Enter Password">
@@ -409,7 +405,7 @@ Don’t just keep up with the times—set new standards of success with TrackMyG
     </div>
     <!-- Assessment Form -->
     <div class="assessment-form" id="assessment-section" style="display: none;">
-        <img src="logo.png" alt="TrackMyGrowth Logo" class="logo">
+        <img src="./55_files/logo.png" alt="TrackMyGrowth Logo" class="logo">
         <h2>Student Assessment Form</h2>
 
         <label>Student Name:</label> <input type="text" id="student-name"><br>
@@ -429,7 +425,7 @@ Don’t just keep up with the times—set new standards of success with TrackMyG
         <label>Comfort in Sharing Problems:</label> <input type="text" id="sharing-problems"><br>
         <label>Social Difficulties:</label> <input type="text" id="social-difficulties"><br>
 
-        <h3>3. Education & Learning</h3>
+        <h3>3. Education &amp; Learning</h3>
         <label>Difficult Subject:</label> <input type="text" id="difficult-subject"><br>
         <label>Preferred Teaching Method:</label> <input type="text" id="teaching-method"><br>
         <label>Reading (Hindi):</label> <input type="number" id="reading-hindi" min="1" max="100"><br>
@@ -439,19 +435,19 @@ Don’t just keep up with the times—set new standards of success with TrackMyG
         <label>Maths Test:</label> <input type="number" id="maths-test" min="1" max="100"><br>
         <label>Overall Syllabus Knowledge:</label> <input type="number" id="overall-syllabus" min="1" max="100"><br>
 
-        <h3>4. Lifestyle & Daily Routine</h3>
+        <h3>4. Lifestyle &amp; Daily Routine</h3>
         <label>Screen Time:</label> <input type="text" id="screen-time"><br>
         <label>Exercise/Yoga:</label> <input type="text" id="exercise"><br>
         <label>Balanced Diet:</label> <input type="text" id="diet"><br>
         <label>Self-Study Hours:</label> <input type="text" id="self-study-time"><br>
 
-        <h3>5. School Environment & Safety</h3>
+        <h3>5. School Environment &amp; Safety</h3>
         <label>School Cleanliness:</label> <input type="text" id="school-cleanliness"><br>
         <label>Safe Drinking Water:</label> <input type="text" id="school-water-air"><br>
         <label>Bullying/Harassment:</label> <input type="text" id="bullying"><br>
         <label>School Transport Safety:</label> <input type="text" id="school-transport"><br>
 
-        <h3>6. Career & Future Goals</h3>
+        <h3>6. Career &amp; Future Goals</h3>
         <label>Future Goals:</label> <input type="text" id="future-goal"><br>
         <label>Need for Career Guidance:</label> <input type="text" id="career-guidance"><br>
         <label>Competitive Exam Preparation:</label> <input type="text" id="competitive-exams"><br>
@@ -601,76 +597,76 @@ Don’t just keep up with the times—set new standards of success with TrackMyG
             });
         }
     </script>
-</body>
-</html>
+
+
 
 
     </div>
-    <div class="container">
-        <section id="about" class="content-section">
+    </a><div class="container"><a <!--="" gallery="" section="" --="">
+        <section id="about" class="content-section" style="display: block;">
             <h2>About TrackMyGrowth</h2>
             <p>About Us
-<p>Empowering Growth, Inspiring Futures<p>
-<p>At TrackMyGrowth, we believe that every child holds limitless potential—and every school plays a pivotal role in unlocking that potential. Our mission is to support parents and schools in nurturing young minds, fostering academic excellence, personal growth, and emotional well-being.<p>
-<p>In today’s fast-paced world, keeping track of a child’s development can be overwhelming for both parents and educators. That’s where we come in. TrackMyGrowth is a revolutionary platform designed to simplify this journey by offering personalized insights, expert guidance, and real-time monitoring of a child’s academic progress, cognitive skills, social behavior, and overall well-being.<p>
-<p>But we don’t stop at supporting children alone. We partner with schools to help them grow, innovate, and set new benchmarks for educational excellence. Our platform offers comprehensive monitoring tools, expert faculty support, school facility inspections, and detailed performance reports—helping institutions create the best learning environment for every student.<p>
+</p><p>Empowering Growth, Inspiring Futures</p><p>
+</p><p>At TrackMyGrowth, we believe that every child holds limitless potential—and every school plays a pivotal role in unlocking that potential. Our mission is to support parents and schools in nurturing young minds, fostering academic excellence, personal growth, and emotional well-being.</p><p>
+</p><p>In today’s fast-paced world, keeping track of a child’s development can be overwhelming for both parents and educators. That’s where we come in. TrackMyGrowth is a revolutionary platform designed to simplify this journey by offering personalized insights, expert guidance, and real-time monitoring of a child’s academic progress, cognitive skills, social behavior, and overall well-being.</p><p>
+</p><p>But we don’t stop at supporting children alone. We partner with schools to help them grow, innovate, and set new benchmarks for educational excellence. Our platform offers comprehensive monitoring tools, expert faculty support, school facility inspections, and detailed performance reports—helping institutions create the best learning environment for every student.</p><p>
 ________________________________________
-<p>🌟 What Sets Us Apart?<p>
-<p>✅ For Parents:<p>
-<p>• Real-time updates on academic, social, and emotional development.<p>
-<p>• Personalized counseling, career guidance, and national-level rankings.<p>
-<p>• 24/7 academic support and health monitoring.<p>
+</p><p>🌟 What Sets Us Apart?</p><p>
+</p><p>✅ For Parents:</p><p>
+</p><p>• Real-time updates on academic, social, and emotional development.</p><p>
+</p><p>• Personalized counseling, career guidance, and national-level rankings.</p><p>
+</p><p>• 24/7 academic support and health monitoring.</p><p>
 
-<p>✅ For Schools:<p>
-<p>• City-wise confidential performance reports and monthly inspections.<p>
-<p>• Third-party education quality audits for unbiased evaluations.<p>
-<p>• Faculty development programs and expert-led extra classes.<p>
-<p>• Assistance with hiring expert teachers and enhancing infrastructure.<p>
+</p><p>✅ For Schools:</p><p>
+</p><p>• City-wise confidential performance reports and monthly inspections.</p><p>
+</p><p>• Third-party education quality audits for unbiased evaluations.</p><p>
+</p><p>• Faculty development programs and expert-led extra classes.</p><p>
+</p><p>• Assistance with hiring expert teachers and enhancing infrastructure.</p><p>
 
-<p>✅ For Features for +2 & College Students.<p>
-<p>• Academic Performance Monitoring.<p>
-<p>• National-Level Ranking & Benchmarking.<p>
-<p>• Career Guidance & Counseling.<p>
-<p>• 24/7 Study Support.<p>
-<p>• Time Management & Productivity.<p>
-<p>• Skill & Personality.<p>
-<p>• Internship & Job Assistance.<p>
-<p>• Scholarship & Financial Aid Guidance.<p>
-<p>• Competitive Exam Preparation.<p>
-<p>• Health & Well-Being.<p>
-<p>• Networking & Community Support.<p>
-<p>• Project & Research Assistance.<p>
-<p>• Placement Training & Support.<p>
+</p><p>✅ For Features for +2 &amp; College Students.</p><p>
+</p><p>• Academic Performance Monitoring.</p><p>
+</p><p>• National-Level Ranking &amp; Benchmarking.</p><p>
+</p><p>• Career Guidance &amp; Counseling.</p><p>
+</p><p>• 24/7 Study Support.</p><p>
+</p><p>• Time Management &amp; Productivity.</p><p>
+</p><p>• Skill &amp; Personality.</p><p>
+</p><p>• Internship &amp; Job Assistance.</p><p>
+</p><p>• Scholarship &amp; Financial Aid Guidance.</p><p>
+</p><p>• Competitive Exam Preparation.</p><p>
+</p><p>• Health &amp; Well-Being.</p><p>
+</p><p>• Networking &amp; Community Support.</p><p>
+</p><p>• Project &amp; Research Assistance.</p><p>
+</p><p>• Placement Training &amp; Support.</p><p>
 
-<p>✅ For Coaching Institutes & college.<p>
-<p>• Extra Test Provider.<p>
-<p>• Expert Teacher Visits.<p>
-<p>• Exam-Time Faculty Support.<p>
-<p>• Student Performance Ranking.<p>
-<p>• Coaching Institute & College Ranking<p>
-<p>• Project & Research Assistance.<p>
-<p>• Internship & Placement Support.<p>
-<p>• Job-Oriented Courses.<p>
-<p>• Health & Group Insurance Plans.<p>
-<p>• Educational Tour Packages<p>
-<p>• Practical-Based Learning Support<p>
-<p>• Skill Development & Personality Growth.<p>
-<p>• Hackathons & Competitive Exam Prep.<p>
+</p><p>✅ For Coaching Institutes &amp; college.</p><p>
+</p><p>• Extra Test Provider.</p><p>
+</p><p>• Expert Teacher Visits.</p><p>
+</p><p>• Exam-Time Faculty Support.</p><p>
+</p><p>• Student Performance Ranking.</p><p>
+</p><p>• Coaching Institute &amp; College Ranking</p><p>
+</p><p>• Project &amp; Research Assistance.</p><p>
+</p><p>• Internship &amp; Placement Support.</p><p>
+</p><p>• Job-Oriented Courses.</p><p>
+</p><p>• Health &amp; Group Insurance Plans.</p><p>
+</p><p>• Educational Tour Packages</p><p>
+</p><p>• Practical-Based Learning Support</p><p>
+</p><p>• Skill Development &amp; Personality Growth.</p><p>
+</p><p>• Hackathons &amp; Competitive Exam Prep.</p><p>
 ________________________________________
-<p>🚀 Our Vision<p>
-<p>To create a world where every child has the opportunity to grow, learn, and succeed—supported by schools and parents working together in harmony.
-<p>🎯 Our Mission<p><p>
-<p>To provide data-driven insights, expert guidance, and innovative tools that empower parents and schools to nurture every child’s unique potential.
-Join us on this journey of growth and excellence. With TrackMyGrowth, the future isn’t just bright—it’s extraordinary.<p>
+</p><p>🚀 Our Vision</p><p>
+</p><p>To create a world where every child has the opportunity to grow, learn, and succeed—supported by schools and parents working together in harmony.
+</p><p>🎯 Our Mission</p><p></p><p>
+</p><p>To provide data-driven insights, expert guidance, and innovative tools that empower parents and schools to nurture every child’s unique potential.
+Join us on this journey of growth and excellence. With TrackMyGrowth, the future isn’t just bright—it’s extraordinary.</p><p>
 
 </p>
         </section>
 
        
        
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+
+
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrackMyGrowth Services</title>
     <style>
@@ -684,150 +680,150 @@ Join us on this journey of growth and excellence. With TrackMyGrowth, the future
             -webkit-text-fill-color: transparent;
         }
     </style>
-</head>
-<body>
-    <section id="services" class="content-section">
+
+
+    <section id="services" class="content-section" style="display: none;">
         <h2>Our Services</h2>
         <ul>
             <li>
-                <h1 class="heading" onclick="toggleContent('content1')">Comprehensive Child Development Services</h1>
+                <h1 class="heading" onclick="toggleContent(&#39;content1&#39;)">Comprehensive Child Development Services</h1>
                 <div id="content1" class="hidden">
-                    <p>Empowering Your Child’s Growth, Every Step of the Way<p>
-<p>At TrackMyGrowth, we offer a personalized, easy-to-use tracking system designed to keep parents updated on their child’s academic progress, cognitive skills, social behavior, and overall well-being.<p>
-<p>We understand that balancing a busy schedule with effective parenting can be challenging. That’s why we provide expert insights and support to help you stay involved in your child’s growth—without the stress.<p>
+                    <p>Empowering Your Child’s Growth, Every Step of the Way</p><p>
+</p><p>At TrackMyGrowth, we offer a personalized, easy-to-use tracking system designed to keep parents updated on their child’s academic progress, cognitive skills, social behavior, and overall well-being.</p><p>
+</p><p>We understand that balancing a busy schedule with effective parenting can be challenging. That’s why we provide expert insights and support to help you stay involved in your child’s growth—without the stress.</p><p>
 
-<p>🌟 Our Key Services<p>
-<p>✅ Academic Performance Tracking & Subject Improvement.<p>
-<p>• Weekly learning reviews and knowledge tests.<p>
-<p>• Identifying weak subjects and creating focused improvement plans.<p>
-<p>• Comparing school syllabi and analyzing school quality.<p>
+</p><p>🌟 Our Key Services</p><p>
+</p><p>✅ Academic Performance Tracking &amp; Subject Improvement.</p><p>
+</p><p>• Weekly learning reviews and knowledge tests.</p><p>
+</p><p>• Identifying weak subjects and creating focused improvement plans.</p><p>
+</p><p>• Comparing school syllabi and analyzing school quality.</p><p>
 
-<p>✅ Cognitive & Skill Development Analysis.<p>
-<p>• Memory retention and learning ability assessment.<p>
-<p>• Communication skills evaluation and confidence-building activities.<p>
-<p>• Career guidance from subject experts based on your child’s interests.p>
-<p>• 24/7 homework and assignment support.<p>
+</p><p>✅ Cognitive &amp; Skill Development Analysis.</p><p>
+</p><p>• Memory retention and learning ability assessment.</p><p>
+</p><p>• Communication skills evaluation and confidence-building activities.</p><p>
+</p><p>• Career guidance from subject experts based on your child’s interests.p&gt;
+</p><p>• 24/7 homework and assignment support.</p><p>
 
-<p>✅ Social & Behavioral Analysis.<p>
-<p>• Monitoring and analyzing friend circles and social behavior.<p>
-<p>• Personality development tracking for confidence and self-growth.<p>
+</p><p>✅ Social &amp; Behavioral Analysis.</p><p>
+</p><p>• Monitoring and analyzing friend circles and social behavior.</p><p>
+</p><p>• Personality development tracking for confidence and self-growth.</p><p>
 
-<p>✅ Health & Hygiene Monitoring.<p>
-<p>• Tracking physical activity and sports participation.<p>
-<p>• Regular health checks conducted by doctors for early symptom detection.<p>
+</p><p>✅ Health &amp; Hygiene Monitoring.</p><p>
+</p><p>• Tracking physical activity and sports participation.</p><p>
+</p><p>• Regular health checks conducted by doctors for early symptom detection.</p><p>
 
-<p>✅ Personalized Counseling & Academic Support.<p>
-<p>• One-on-one video counseling for academic and emotional well-being.<p>
-<p>• Guidance and motivation to help overcome challenges.<p>
+</p><p>✅ Personalized Counseling &amp; Academic Support.</p><p>
+</p><p>• One-on-one video counseling for academic and emotional well-being.</p><p>
+</p><p>• Guidance and motivation to help overcome challenges.</p><p>
 
-<p>✅ Weekly Personalized Reports.<p>
-<p>• Password-protected reports delivered via email and WhatsApp.<p>
-<p>• Updates on academic progress, behavior, health, and expert advice.<p>
+</p><p>✅ Weekly Personalized Reports.</p><p>
+</p><p>• Password-protected reports delivered via email and WhatsApp.</p><p>
+</p><p>• Updates on academic progress, behavior, health, and expert advice.</p><p>
 
-<p>✅ National-Level Knowledge Ranking & Benchmarking.<p>
-<p>• Knowledge comparison with over 10,000 students.<p>
-<p>• Exclusive feature—offering a unique service not available anywhere else.<p>
-<p>• Get a detailed report showing your child's rank at three levels—city, state, and national.<p>
-<p>• Performance comparisons start within your city, expand to the state, and then nationwide.<p>
-<p>• Weekly ranking lists to track your child’s progress and growth.<p>
+</p><p>✅ National-Level Knowledge Ranking &amp; Benchmarking.</p><p>
+</p><p>• Knowledge comparison with over 10,000 students.</p><p>
+</p><p>• Exclusive feature—offering a unique service not available anywhere else.</p><p>
+</p><p>• Get a detailed report showing your child's rank at three levels—city, state, and national.</p><p>
+</p><p>• Performance comparisons start within your city, expand to the state, and then nationwide.</p><p>
+</p><p>• Weekly ranking lists to track your child’s progress and growth.</p><p>
 
-<p>✅ Daily Activity & Thought Process Analysis.<p>
-<p>• Time management tracking (study time, screen time, social media usage, etc.)<p>
-<p>• Behavioral insights and productivity improvement tips.
-<p>
-<p>✅ Special Features<p>
-<p>• Parenting workshops and webinars.<p>
-<p>• Expert sessions and career counseling.<p>
-<p>• Motivational activities and self-improvement programs.<p>
-                </div>
+</p><p>✅ Daily Activity &amp; Thought Process Analysis.</p><p>
+</p><p>• Time management tracking (study time, screen time, social media usage, etc.)</p><p>
+</p><p>• Behavioral insights and productivity improvement tips.
+</p><p>
+</p><p>✅ Special Features</p><p>
+</p><p>• Parenting workshops and webinars.</p><p>
+</p><p>• Expert sessions and career counseling.</p><p>
+</p><p>• Motivational activities and self-improvement programs.</p><p>
+                </p></div>
             </li>
             <li>
-                <h1 class="heading" onclick="toggleContent('content2')">Schools for Comprehensive Growth and Excellence</h1>
+                <h1 class="heading" onclick="toggleContent(&#39;content2&#39;)">Schools for Comprehensive Growth and Excellence</h1>
                 <div id="content2" class="hidden">
-                    <p>At TrackMyGrowth, we believe every school plays a vital role in shaping the leaders of tomorrow. Our mission is to support schools with innovative, data-driven solutions that foster student development and help institutions excel on every front.<p>
-<p>Join our rapidly growing platform and modernize your school from every angle—experience measurable growth with TrackMyGrowth!<p>
+                    <p>At TrackMyGrowth, we believe every school plays a vital role in shaping the leaders of tomorrow. Our mission is to support schools with innovative, data-driven solutions that foster student development and help institutions excel on every front.</p><p>
+</p><p>Join our rapidly growing platform and modernize your school from every angle—experience measurable growth with TrackMyGrowth!</p><p>
 
-<p>🌟 Our Comprehensive Services for Schools<p>
+</p><p>🌟 Our Comprehensive Services for Schools</p><p>
 
-<p>✅ Academic Performance Monitoring & Student Development.<p>
-<p>• Regular academic assessments and detailed progress tracking for every student.<p>
-<p>• City-wise comparative reports to benchmark student performance across schools.<p>
-<p>• Personalized counseling sessions focused on academic, social, and emotional growth.<p>
-<p>• Boost admissions through reputation-building based on student achievements.<p>
+</p><p>✅ Academic Performance Monitoring &amp; Student Development.</p><p>
+</p><p>• Regular academic assessments and detailed progress tracking for every student.</p><p>
+</p><p>• City-wise comparative reports to benchmark student performance across schools.</p><p>
+</p><p>• Personalized counseling sessions focused on academic, social, and emotional growth.</p><p>
+</p><p>• Boost admissions through reputation-building based on student achievements.</p><p>
 
-<p>✅ Monthly School Performance Monitoring .<p>
-<p>Our detailed reports help you monitor and enhance your school’s environment:<p>
-<p>• Water Quality Testing: Ensuring clean, safe drinking water with pH level analysis.<p>
-<p>• Air Quality Index Monitoring: Maintaining a healthy learning environment<p>.
-<p>• Classroom Ventilation Assessments: Improving air circulation and classroom conditions.<p>
-<p>• Cleanliness & Hygiene Audits: Upholding sanitation and hygiene standards.<p>
-<p>• Playground & Sports Facility Testing: Guaranteeing safe, functional play areas.<p>
-<p>• Transport Condition Checks: Monitoring school transportation for safety and reliability.<p>
+</p><p>✅ Monthly School Performance Monitoring .</p><p>
+</p><p>Our detailed reports help you monitor and enhance your school’s environment:</p><p>
+</p><p>• Water Quality Testing: Ensuring clean, safe drinking water with pH level analysis.</p><p>
+</p><p>• Air Quality Index Monitoring: Maintaining a healthy learning environment</p><p>.
+</p><p>• Classroom Ventilation Assessments: Improving air circulation and classroom conditions.</p><p>
+</p><p>• Cleanliness &amp; Hygiene Audits: Upholding sanitation and hygiene standards.</p><p>
+</p><p>• Playground &amp; Sports Facility Testing: Guaranteeing safe, functional play areas.</p><p>
+</p><p>• Transport Condition Checks: Monitoring school transportation for safety and reliability.</p><p>
 
-<p>✅ School Growth & Ranking System<p>
-<p>• City-wise confidential reports comparing your school’s performance with others.<p>
-<p>• Monthly inspection-based evaluations to highlight improvement areas.<p>
-<p>• A specialized ranking system to enhance your school’s reputation and attract growth opportunities.<p>
+</p><p>✅ School Growth &amp; Ranking System</p><p>
+</p><p>• City-wise confidential reports comparing your school’s performance with others.</p><p>
+</p><p>• Monthly inspection-based evaluations to highlight improvement areas.</p><p>
+</p><p>• A specialized ranking system to enhance your school’s reputation and attract growth opportunities.</p><p>
 
-<p>✅ Faculty Development & Teacher Support<p>
-<p>• Regular professional development programs for teachers.<p>
-<p>• Providing expert teachers for specialized subjects to elevate learning outcomes.<p>
-<p>• Assistance in recruiting top-tier faculty to strengthen your school’s foundation.<p>
-<p>✅ Expert-Led Exam Support<p>
-<p>• Extra classes conducted by subject experts during exam periods.<p>
-<p>• Customized study plans and preparation sessions designed for student success.<p>
-<p>🚀 Why Partner with TrackMyGrowth?<p>
-<p>TrackMyGrowth is one of the fastest-growing platforms designed to transform your school into a modern, high-performing institution. By joining our panel, you’ll gain:<p>
-<p>• Access to cutting-edge data insights.<p>
-<p>• Expert-led support and strategies.<p>
-<p>• A clear path to measurable academic and institutional growth.<p>
-<p>Don’t wait—partner with TrackMyGrowth today and see the difference in your school’s performance and reputation!</p>
+</p><p>✅ Faculty Development &amp; Teacher Support</p><p>
+</p><p>• Regular professional development programs for teachers.</p><p>
+</p><p>• Providing expert teachers for specialized subjects to elevate learning outcomes.</p><p>
+</p><p>• Assistance in recruiting top-tier faculty to strengthen your school’s foundation.</p><p>
+</p><p>✅ Expert-Led Exam Support</p><p>
+</p><p>• Extra classes conducted by subject experts during exam periods.</p><p>
+</p><p>• Customized study plans and preparation sessions designed for student success.</p><p>
+</p><p>🚀 Why Partner with TrackMyGrowth?</p><p>
+</p><p>TrackMyGrowth is one of the fastest-growing platforms designed to transform your school into a modern, high-performing institution. By joining our panel, you’ll gain:</p><p>
+</p><p>• Access to cutting-edge data insights.</p><p>
+</p><p>• Expert-led support and strategies.</p><p>
+</p><p>• A clear path to measurable academic and institutional growth.</p><p>
+</p><p>Don’t wait—partner with TrackMyGrowth today and see the difference in your school’s performance and reputation!</p>
                 </div>
             </li>
             <li>
-                <h1 class="heading" onclick="toggleContent('content3')">Empowering Colleges & Coaching Institutes for Success</h1>
+                <h1 class="heading" onclick="toggleContent(&#39;content3&#39;)">Empowering Colleges &amp; Coaching Institutes for Success</h1>
                 <div id="content3" class="hidden">
-                    <p>At TrackMyGrowth, we understand the crucial role that colleges and coaching institutes play in shaping future professionals and leaders. Our mission is to provide data-driven insights, expert faculty support, and career-oriented solutions to help institutions deliver exceptional education and measurable student growth.<p>
+                    <p>At TrackMyGrowth, we understand the crucial role that colleges and coaching institutes play in shaping future professionals and leaders. Our mission is to provide data-driven insights, expert faculty support, and career-oriented solutions to help institutions deliver exceptional education and measurable student growth.</p><p>
 
-<p>Join our rapidly growing platform to modernize your college or coaching institute with cutting-edge tools, academic excellence strategies, and industry-focused learning opportunities. Experience holistic growth and competitive success with TrackMyGrowth!<p>
+</p><p>Join our rapidly growing platform to modernize your college or coaching institute with cutting-edge tools, academic excellence strategies, and industry-focused learning opportunities. Experience holistic growth and competitive success with TrackMyGrowth!</p><p>
 
-<p>✅ TrackMyGrowth Services for Colleges & Coaching Institutes
-<p>✅ Extra Test Provider – Conduct weekly, monthly & mock tests to track student progress & exam readiness.<p>
-<p>✅ Expert Teacher Visits – Get subject experts for special topics, doubt-clearing sessions & advanced learning.<p>
-<p>✅ Exam-Time Faculty Support – Additional faculty assistance & expert-led revision classes during crucial exams.<p>
-<p>✅ Student Performance Ranking – Compare students' rankings at city, state & national levels for better insights.<p>
-<p>✅ Coaching Institute & College Ranking – Get confidential reports & performance comparisons to improve reputation & attract more students.<p>
-<p>✅ Project & Research Assistance – Support students with expert mentorship, research databases & industry collaborations.<p>
-<p>✅ Internship & Placement Support – Connect students with top companies for internships & full-time placements.<p>
-<p>✅ Job-Oriented Courses – Offer specialized training programs tailored for industry demands & career growth.<p>
-<p>✅ Health & Group Insurance Plans – Provide affordable health coverage & wellness support for students.<p>
-<p>✅ Educational Tour Packages – Organize knowledge-based tours, industrial visits & study trips for practical exposure.<p>
-<p>✅ Practical-Based Learning Support – Hands-on training, lab sessions & industry visits for skill enhancement.<p>
-<p>✅ Skill Development & Personality Growth – Conduct workshops on communication, leadership & industry-relevant skills.<p>
-<p>✅ Hackathons & Competitive Exam Prep – Organize coding challenges, innovation contests & special coaching for JEE, NEET, CAT, UPSC & more.</p>
+</p><p>✅ TrackMyGrowth Services for Colleges &amp; Coaching Institutes
+</p><p>✅ Extra Test Provider – Conduct weekly, monthly &amp; mock tests to track student progress &amp; exam readiness.</p><p>
+</p><p>✅ Expert Teacher Visits – Get subject experts for special topics, doubt-clearing sessions &amp; advanced learning.</p><p>
+</p><p>✅ Exam-Time Faculty Support – Additional faculty assistance &amp; expert-led revision classes during crucial exams.</p><p>
+</p><p>✅ Student Performance Ranking – Compare students' rankings at city, state &amp; national levels for better insights.</p><p>
+</p><p>✅ Coaching Institute &amp; College Ranking – Get confidential reports &amp; performance comparisons to improve reputation &amp; attract more students.</p><p>
+</p><p>✅ Project &amp; Research Assistance – Support students with expert mentorship, research databases &amp; industry collaborations.</p><p>
+</p><p>✅ Internship &amp; Placement Support – Connect students with top companies for internships &amp; full-time placements.</p><p>
+</p><p>✅ Job-Oriented Courses – Offer specialized training programs tailored for industry demands &amp; career growth.</p><p>
+</p><p>✅ Health &amp; Group Insurance Plans – Provide affordable health coverage &amp; wellness support for students.</p><p>
+</p><p>✅ Educational Tour Packages – Organize knowledge-based tours, industrial visits &amp; study trips for practical exposure.</p><p>
+</p><p>✅ Practical-Based Learning Support – Hands-on training, lab sessions &amp; industry visits for skill enhancement.</p><p>
+</p><p>✅ Skill Development &amp; Personality Growth – Conduct workshops on communication, leadership &amp; industry-relevant skills.</p><p>
+</p><p>✅ Hackathons &amp; Competitive Exam Prep – Organize coding challenges, innovation contests &amp; special coaching for JEE, NEET, CAT, UPSC &amp; more.</p>
                 </div>
             </li>
             <li>
-                <h1 class="heading" onclick="toggleContent('content4')">Empowering +2 & University Students for Academic & Career Success</h1>
+                <h1 class="heading" onclick="toggleContent(&#39;content4&#39;)">Empowering +2 &amp; University Students for Academic &amp; Career Success</h1>
                 <div id="content4" class="hidden">
-                    <p><p>At TrackMyGrowth, we understand the challenges faced by +2 and university students in shaping their future careers. Our mission is to provide personalized academic support, career guidance, and industry-focused learning opportunities to help students excel in board exams, university studies, competitive tests, and career paths.<p>
-<p>Join our rapidly growing platform to enhance your learning experience with data-driven insights, expert mentorship, internship support, and skill development programs. Experience holistic growth and stay ahead in your academic journey with TrackMyGrowth!<p> 
-<p>✅ Academic Performance Monitoring – Track subject-wise progress, identify weak areas & get personalized improvement plans.<p>
-<p>✅ National-Level Ranking & Benchmarking – Compare your performance with students at city, state, and national levels.<p>
-<p>✅ Career Guidance & Counseling – Get expert advice on career paths, higher education opportunities, and competitive exams.<p>
-<p>✅ 24/7 Study Support – Access doubt-solving sessions, expert-led exam preparation, and academic mentorship.<p>
-<p>✅ Internship & Placement Assistance – Connect with top companies for internships and job opportunities.<p>
-<p>✅ Project & Research Support – Guidance from experts for academic projects, research papers, and innovation challenges.<p>
-<p>✅ Time Management & Productivity Tracking – Monitor study habits, screen time, and daily activity patterns for better efficiency.<p>
-<p>✅ Skill Development & Personality Growth – Improve communication, leadership, and industry-relevant skills through expert-led training.<p>
-<p>✅ Job-Oriented Courses & Certifications – Enroll in specialized programs tailored to industry needs.<p>
-<p>✅ Health & Well-Being Monitoring – Track physical and mental wellness for holistic student growth.<p>
-<p>✅ Educational Tour & Industrial Visit Support – Get real-world exposure through curated tours and industry interactions.<p>
+                    <p></p><p>At TrackMyGrowth, we understand the challenges faced by +2 and university students in shaping their future careers. Our mission is to provide personalized academic support, career guidance, and industry-focused learning opportunities to help students excel in board exams, university studies, competitive tests, and career paths.</p><p>
+</p><p>Join our rapidly growing platform to enhance your learning experience with data-driven insights, expert mentorship, internship support, and skill development programs. Experience holistic growth and stay ahead in your academic journey with TrackMyGrowth!</p><p> 
+</p><p>✅ Academic Performance Monitoring – Track subject-wise progress, identify weak areas &amp; get personalized improvement plans.</p><p>
+</p><p>✅ National-Level Ranking &amp; Benchmarking – Compare your performance with students at city, state, and national levels.</p><p>
+</p><p>✅ Career Guidance &amp; Counseling – Get expert advice on career paths, higher education opportunities, and competitive exams.</p><p>
+</p><p>✅ 24/7 Study Support – Access doubt-solving sessions, expert-led exam preparation, and academic mentorship.</p><p>
+</p><p>✅ Internship &amp; Placement Assistance – Connect with top companies for internships and job opportunities.</p><p>
+</p><p>✅ Project &amp; Research Support – Guidance from experts for academic projects, research papers, and innovation challenges.</p><p>
+</p><p>✅ Time Management &amp; Productivity Tracking – Monitor study habits, screen time, and daily activity patterns for better efficiency.</p><p>
+</p><p>✅ Skill Development &amp; Personality Growth – Improve communication, leadership, and industry-relevant skills through expert-led training.</p><p>
+</p><p>✅ Job-Oriented Courses &amp; Certifications – Enroll in specialized programs tailored to industry needs.</p><p>
+</p><p>✅ Health &amp; Well-Being Monitoring – Track physical and mental wellness for holistic student growth.</p><p>
+</p><p>✅ Educational Tour &amp; Industrial Visit Support – Get real-world exposure through curated tours and industry interactions.</p><p>
 
            
-</h1>                                                             
+                                                             
            
-        </ul>
+        </p></div></li></ul>
     </section>
 
     <script>
@@ -840,17 +836,17 @@ Join us on this journey of growth and excellence. With TrackMyGrowth, the future
             }
         }
     </script>
-</body>
-</html>
+
+
 
     
             
 
-.</li>
-            </ul>
-        </section>
+.
+            
+        
 
-        <section id="faq" class="content-section">
+        <section id="faq" class="content-section" style="display: none;">
             <h2>Frequently Asked Questions</h2>
             <div class="faq">
                 <button class="faq-question">1. What is TrackMyGrowth?</button>
@@ -867,58 +863,58 @@ Join us on this journey of growth and excellence. With TrackMyGrowth, the future
             <div class="faq">
                 <button class="faq-question">3.How can parents benefit from TrackMyGrowth?</button>
                 <div class="faq-answer">
-                    <p>TrackMyGrowth helps parents stay actively involved in their child’s academic, social, and personal development by providing real-time updates, expert guidance, and personalized reports.<p>
+                    <p>TrackMyGrowth helps parents stay actively involved in their child’s academic, social, and personal development by providing real-time updates, expert guidance, and personalized reports.</p><p>
 
-<p>✅ Real-Time Academic Tracking – Parents receive weekly reports on their child’s academic performance, physical behavior, and a 360-degree analyzed report with improvement suggestions.<p>
+</p><p>✅ Real-Time Academic Tracking – Parents receive weekly reports on their child’s academic performance, physical behavior, and a 360-degree analyzed report with improvement suggestions.</p><p>
 
-<p><p>✅ Personalized Counseling & Career Guidance – One-on-one expert counseling helps parents choose the best career path for their child based on skills, interests, and future opportunities.<p>
+</p><p></p><p>✅ Personalized Counseling &amp; Career Guidance – One-on-one expert counseling helps parents choose the best career path for their child based on skills, interests, and future opportunities.</p><p>
 
-<p>✅ National-Level Student Ranking – Compare your child’s performance with city, state, and national benchmarks, helping parents track progress and ensure continuous improvement.<p>
+</p><p>✅ National-Level Student Ranking – Compare your child’s performance with city, state, and national benchmarks, helping parents track progress and ensure continuous improvement.</p><p>
 
-<p>✅ 24/7 Learning Support – Students get on-demand homework help, doubt-solving sessions, and exam preparation resources to excel in studies.
-<p>
-<p>✅ Health & Well-Being Monitoring – Parents receive regular updates on their child’s physical and mental well-being, including activity tracking, nutrition advice, and wellness insights.<p>
+</p><p>✅ 24/7 Learning Support – Students get on-demand homework help, doubt-solving sessions, and exam preparation resources to excel in studies.
+</p><p>
+</p><p>✅ Health &amp; Well-Being Monitoring – Parents receive regular updates on their child’s physical and mental well-being, including activity tracking, nutrition advice, and wellness insights.</p><p>
 
-<p>✅ Time Management & Productivity Reports – Get a detailed breakdown of how much time your child spends on studying, social media, and other activities to ensure a balanced lifestyle.<p><p><p>
+</p><p>✅ Time Management &amp; Productivity Reports – Get a detailed breakdown of how much time your child spends on studying, social media, and other activities to ensure a balanced lifestyle.</p><p></p><p></p><p>
 
-<p>✅ Scholarship & Competitive Exam Support – Expert guidance and preparation assistance for JEE, NEET, UPSC, CAT, and other competitive exams, along with scholarship opportunities.<p>
+</p><p>✅ Scholarship &amp; Competitive Exam Support – Expert guidance and preparation assistance for JEE, NEET, UPSC, CAT, and other competitive exams, along with scholarship opportunities.</p><p>
 
-</p>✅ Social & Behavioral Insights – Parents receive reports on friend circles, social behavior, and confidence-building activities to help their child grow emotionally and socially.</p>
+</p>✅ Social &amp; Behavioral Insights – Parents receive reports on friend circles, social behavior, and confidence-building activities to help their child grow emotionally and socially.<p></p>
                      </div>
             <div class="faq">
                 <button class="faq-question">3.How does TrackMyGrowth benefit schools?</button>
                 <div class="faq-answer">
                     <p>TrackMyGrowth helps schools improve their quality, student performance, and reputation through data-driven insights, expert support, and school-wide evaluations. Schools benefit in the following ways:
 
-<p>✔ Full School Inspection Reports – We assess infrastructure, cleanliness, air & water quality, and classroom conditions to ensure a safe learning environment.<p>
+</p><p>✔ Full School Inspection Reports – We assess infrastructure, cleanliness, air &amp; water quality, and classroom conditions to ensure a safe learning environment.</p><p>
 
-<p>✔ City-Wise School Rankings – We provide confidential performance reports comparing schools with others in the city, helping them identify areas for improvement.<p>
+</p><p>✔ City-Wise School Rankings – We provide confidential performance reports comparing schools with others in the city, helping them identify areas for improvement.</p><p>
 
-<p>✔ Faculty Development Programs – We offer teacher training, expert subject guidance, and extra classes during exams to enhance teaching quality.<p>
+</p><p>✔ Faculty Development Programs – We offer teacher training, expert subject guidance, and extra classes during exams to enhance teaching quality.</p><p>
 
-<p><p><p>✔ Student Performance Tracking – Schools receive detailed reports on student progress, helping teachers focus on subject-wise improvement.<p>
+</p><p></p><p></p><p>✔ Student Performance Tracking – Schools receive detailed reports on student progress, helping teachers focus on subject-wise improvement.</p><p>
 
-<p>✔ Admission & Reputation Boost – Schools can showcase their TrackMyGrowth accreditation to attract more students and improve their rankings.<p>
+</p><p>✔ Admission &amp; Reputation Boost – Schools can showcase their TrackMyGrowth accreditation to attract more students and improve their rankings.</p><p>
 
-<p>✔ Expert-Led Extra Classes – We provide specialized teachers for competitive exams, skill-building, and project guidance.<p>
+</p><p>✔ Expert-Led Extra Classes – We provide specialized teachers for competitive exams, skill-building, and project guidance.</p><p>
 
-<p>✔ Better Hiring & Teacher Support – Schools get assistance in hiring qualified teachers, improving overall faculty strength.<p>
+</p><p>✔ Better Hiring &amp; Teacher Support – Schools get assistance in hiring qualified teachers, improving overall faculty strength.</p><p>
 
-<p>✔ Monthly Monitoring & Feedback – Schools receive regular reports on infrastructure, student behavior, and academic progress to maintain high educational standards.</p>
+</p><p>✔ Monthly Monitoring &amp; Feedback – Schools receive regular reports on infrastructure, student behavior, and academic progress to maintain high educational standards.</p>
                 </div>
             </div>
-        </section>
+        </div></section>
 
-        <section id="join" class="content-section">
+        </a><section id="join" class="content-section" style="display: none;"><a <!--="" gallery="" section="" --="">
             <h2>Join Us</h2>
             <p>Choose your role and start your journey with TrackMyGrowth:</p>
-          <div class="join-buttons">
-    <a href="https://form.jotform.com/250492894865473" target="_blank">For Parents - Fill Form</a>
+          </a><div class="join-buttons"><a <!--="" gallery="" section="" --="">
+    </a><a href="https://form.jotform.com/250492894865473" target="_blank">For Parents - Fill Form</a>
     <a href="https://form.jotform.com/250614510656452" target="_blank">For Schools - Register Your School</a>
 </div>
-            </div>
-        </section>
-    </div>
+            </section></div>
+        
+    
 
     <script>
         function showSection(sectionId) {
@@ -938,3 +934,4 @@ Join us on this journey of growth and excellence. With TrackMyGrowth, the future
     </script>
 
 
+</nav></body></html>
